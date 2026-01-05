@@ -36,3 +36,24 @@ src/
 │── App.jsx
 │── main.jsx
 
+
+## 🌱 Future Enhancements
+
+Separate pages using React Router
+
+Backend integration for contact form
+
+Employee dashboard for task & project management
+
+Authentication system
+
+Admin panel for content updates
+
+## 👨‍💻 Author
+
+Md Adnan Sohail
+Frontend Developer | React | UI/UX Enthusiast
+
+## 📄 License
+
+This project is for learning and portfolio purposes.
