@@ -17,11 +17,13 @@ const Navbar = () => {
     const ctx = gsap.context(() => {
       // Entry animation
       gsap.from(navRef.current, {
-        y: -100,
-        opacity: 0,
-        duration: 1.2,
-        ease: "expo.out",
-      });
+      y: -100,
+      opacity: 0,
+      duration: 1.2,
+      ease: "expo.out",
+      clearProps: "opacity,transform" 
+    });
+
 
       // Scroll glass effect
       gsap.timeline({
