@@ -29,3 +29,10 @@ The project focuses on delivering a clean UI, smooth animations, and a professio
 
 ## 📁 Project Structure
 
+src/
+│── assets/ # Images & static assets
+│── Components/ # Reusable UI components
+│── pages/ # Page-level components (future ready)
+│── App.jsx
+│── main.jsx
+
