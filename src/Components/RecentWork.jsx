@@ -17,9 +17,9 @@ const RecentWork = () => {
   return (
     <div className='bg-black py-12 md:py-24 px-4 overflow-hidden'>
       <div className='max-w-7xl mx-auto'>
-        <div className='flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4'>
+        <div className='flex flex-col items-center justify-center text-center  mb-16 px-4'>
             <h1 className='text-3xl md:text-5xl text-white font-bold leading-tight'>
-                Our Recent <br className='hidden md:block'/> Works
+                Our Recent Works
             </h1>
             <p className='text-gray-400 max-w-sm text-sm md:text-base'>
                 Showcasing our latest digital transformations and high-performance web solutions.

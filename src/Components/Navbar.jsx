@@ -2,6 +2,7 @@ import React, { useLayoutEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Link } from "react-router-dom";
+import logo from "../assets/WDL-LOGO.png"
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -66,14 +67,14 @@ const Navbar = () => {
   return (
     <nav
       ref={navRef}
-      className="fixed top-0 w-full z-50 py-6"
+      className="fixed top-0 w-full z-50 py-4"
       style={{ backgroundColor: "#ffffff", color: "#000000" }}
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
 
         {/* LOGO */}
-        <div ref={logoRef} className="text-2xl font-bold tracking-tight">
-          Website Design Land
+        <div ref={logoRef} className="flex items-center cursor-pointer w-24 sm:w-32 md:w-40 lg:w-48">
+          <img src={logo} alt="Website Design Land" className="w-full h-auto max-h-10 object-contain" />
         </div>
 
         {/* DESKTOP LINKS */}
