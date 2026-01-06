@@ -15,40 +15,62 @@ const RecentWork = () => {
   ];
 
   return (
-    <div className='bg-black py-16 px-4'>
-      <h1 className='text-3xl text-white font-bold text-center mb-10'>Our Recent Works</h1>
+    <div className='bg-black py-12 md:py-24 px-4 overflow-hidden'>
+      <div className='max-w-7xl mx-auto'>
+        <div className='flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4'>
+            <h1 className='text-3xl md:text-5xl text-white font-bold leading-tight'>
+                Our Recent <br className='hidden md:block'/> Works
+            </h1>
+            <p className='text-gray-400 max-w-sm text-sm md:text-base'>
+                Showcasing our latest digital transformations and high-performance web solutions.
+            </p>
+        </div>
 
-      {/* Main Container */}
-      <div className='flex flex-row w-full h-[550px] gap-3 max-w-6xl mx-auto'>
-        {projects.map((p) => (
-          <div 
-            key={p.id} 
-            className='relative flex-1 overflow-hidden rounded-xl border border-white/10 transition-all duration-700 ease-out hover:flex-[6] group cursor-pointer'
-          >
-            {/* Image: Anchored to top to show the 'Website Header' first */}
-            <img 
-              src={p.src} 
-              alt={p.title} 
-              className='absolute inset-0 w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105' 
-            />
-            
-            {/* Dark Overlay that clears on hover */}
-            <div className="absolute inset-0 bg-black/40 group-hover:bg-transparent transition-all" />
-            
-            {/* Bottom Label */}
-            <div className="absolute bottom-0 w-full p-4 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
-              <h2 className='text-white font-bold text-lg'>{p.title}</h2>
-              <p className='text-blue-400 text-xs uppercase'>View Project</p>
+        {/* Responsive Container */}
+        {/* Mobile: Vertical Stack (Flex-Col) | Desktop: Horizontal Accordion (Flex-Row) */}
+        <div className='flex flex-col md:flex-row w-full h-auto md:h-[550px] gap-4 md:gap-3'>
+          {projects.map((p) => (
+            <div 
+              key={p.id} 
+              className='
+                relative 
+                w-full h-[250px] md:h-full 
+                flex-none md:flex-1 
+                overflow-hidden rounded-2xl 
+                border border-white/10 
+                transition-all duration-700 ease-out 
+                md:hover:flex-[5] 
+                group cursor-pointer
+              '
+            >
+              {/* Image */}
+              <img 
+                src={p.src} 
+                alt={p.title} 
+                className='absolute inset-0 w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110' 
+              />
+              
+              {/* Overlay: Always slightly visible on mobile, clears on desktop hover */}
+              <div className="absolute inset-0 bg-black/30 md:bg-black/50 md:group-hover:bg-transparent transition-all duration-500" />
+              
+              {/* Label: Always visible on mobile, fades in on desktop */}
+              <div className="absolute bottom-0 w-full p-6 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-all duration-500">
+                <p className='text-blue-400 text-[10px] md:text-xs uppercase tracking-widest mb-1'>View Project</p>
+                <h2 className='text-white font-bold text-xl md:text-2xl'>{p.title}</h2>
+              </div>
             </div>
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
 
-      <div className='text-center mt-12'>
-        <button className='group relative px-12 py-4 bg-transparent border border-white/20 rounded-full overflow-hidden'>
-            <span className='relative z-10 text-white font-bold transition-colors group-hover:text-black'>EXPLORE ALL WORKS</span>
-            <div className='absolute inset-0 bg-white translate-y-[101%] group-hover:translate-y-0 transition-transform duration-300'></div>
+        {/* Bottom Button */}
+        <div className='text-center mt-12 md:mt-16'>
+          <button className='group relative w-full md:w-auto px-12 py-5 bg-transparent border border-white/20 rounded-full overflow-hidden transition-all active:scale-95'>
+            <span className='relative z-10 text-white font-bold text-sm md:text-base transition-colors group-hover:text-black uppercase'>
+                Explore All Works
+            </span>
+            <div className='absolute inset-0 bg-white translate-y-[101%] md:group-hover:translate-y-0 transition-transform duration-300'></div>
           </button>
+        </div>
       </div>
     </div>
   )
