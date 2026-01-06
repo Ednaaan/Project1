@@ -56,7 +56,7 @@ const About = () => {
           </p>
 
           <h2 className="about-item uppercase text-3xl sm:text-4xl md:text-5xl font-bold leading-tight">
-            Welcome to Websitedesignland – <br className="hidden md:block" /> 
+            Welcome to Websitedesignland  <br className="hidden md:block" /> 
             <span className="text-gray-300">Your Trusted Partner in Digital Transformation.</span>
           </h2>
 
