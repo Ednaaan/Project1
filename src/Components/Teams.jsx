@@ -35,7 +35,7 @@ const Teams = () => {
 
   return (
     <div className='bg-black py-16'>
-        <h1 className='text-5xl text-white text-center mb-12 font-bold'>Our Team Members</h1>
+        <h1 className='text-5xl text-[#8259DA] text-center mb-12 font-bold'>Our Team Members</h1>
 
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 px-8 max-w-7xl mx-auto'>
             {teams.map((member) => (

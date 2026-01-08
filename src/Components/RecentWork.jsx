@@ -18,7 +18,7 @@ const RecentWork = () => {
     <div className='bg-black py-12 md:py-24 px-4 overflow-hidden'>
       <div className='max-w-7xl mx-auto'>
         <div className='flex flex-col items-center justify-center text-center  mb-16 px-4'>
-            <h1 className='text-3xl md:text-5xl text-white font-bold leading-tight'>
+            <h1 className='text-3xl md:text-5xl text-[#8259DA] font-bold leading-tight'>
                 Our Recent Works
             </h1>
             <p className='text-gray-400 max-w-sm text-sm md:text-base'>

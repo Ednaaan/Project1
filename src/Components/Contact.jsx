@@ -5,7 +5,7 @@ const Contact = () => {
   return (
     <div className='bg-black py-16'>
       <div className='max-w-7xl mx-auto px-8'>
-        <h1 className='text-5xl text-white text-center mb-12 font-bold'>Contact Us</h1>
+        <h1 className='text-5xl text-[#8259DA] text-center mb-12 font-bold'>Contact Us</h1>
         
         <div className='flex flex-col md:flex-row gap-12 items-center'>
           {/* Left Side: Image */}

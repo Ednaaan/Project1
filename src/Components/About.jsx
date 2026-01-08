@@ -51,7 +51,7 @@ const About = () => {
         
         {/* LEFT CONTENT */}
         <div className="text-center md:text-left">
-          <p className="about-item uppercase text-sm md:text-lg tracking-[0.2em] text-gray-400 mb-4">
+          <p className="about-item uppercase text-sm md:text-lg tracking-[0.2em] text-[#8259DA] mb-4">
             ABOUT
           </p>
 

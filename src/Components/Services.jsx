@@ -56,7 +56,7 @@ const Services = () => {
 
         {/* LEFT SIDE (STICKY TITLE) */}
         <div className="md:sticky md:top-32 self-start">
-          <h2 className="text-5xl font-bold leading-tight">
+          <h2 className="text-5xl font-bold leading-tight text-[#8259DA]">
             Services
           </h2>
           <p className="mt-6 text-gray-400 max-w-sm">
