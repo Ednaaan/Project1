@@ -89,7 +89,7 @@ const Hero = () => {
           >
             <div className="w-full max-w-md md:max-w-lg">
               <form className="bg-black/60 backdrop-blur-xl p-6 md:p-10 rounded-2xl border border-white/10 space-y-5 shadow-2xl">
-                <h2 className="text-xl md:text-2xl font-bold text-[#8259DA] tracking-tight">
+                <h2 className="text-xl md:text-2xl font-bold text-white tracking-tight">
                   Lets Get Started
                 </h2>
 
