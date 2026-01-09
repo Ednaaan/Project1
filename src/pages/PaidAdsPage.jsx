@@ -43,9 +43,9 @@ const PaidAdsPage = () => {
             <div className='inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#8b75f2]/10 border border-[#8b75f2]/20 text-[#8b75f2] text-xs font-bold uppercase tracking-widest'>
               <ShieldCheck className='w-3 h-3' /> Certified Partner
             </div>
-            <h1 className='text-5xl md:text-6xl font-black leading-tight'>
+            <h1 className='text-5xl md:text-6xl font-black leading-tight bg-gradient-to-r from-white via-purple-400 to-purple-600 bg-clip-text text-transparent'>
               Stop Spending. <br />
-              <span className='text-[#8b75f2]'>Start Investing.</span>
+              <span >Start Investing.</span>
             </h1>
             <p className='text-gray-400 text-lg leading-relaxed max-w-lg'>
               Maximize your ROI with data-backed PPC strategies. We manage your ad spend as if it were our own, 

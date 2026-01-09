@@ -38,8 +38,8 @@ const SeoPage = () => {
         <div className='grid lg:grid-cols-2 gap-12 items-center mb-20'>
           <div className='flex flex-col gap-6'>
             <span className='text-[#8b75f2] font-semibold tracking-wide uppercase text-sm'>Boost Your Visibility</span>
-            <h1 className='text-5xl font-extrabold leading-tight'>
-              Professional <span className='text-[#8b75f2]'>SEO Services</span> for Modern Businesses
+            <h1 className='text-5xl font-extrabold leading-tight bg-gradient-to-r from-white via-purple-400 to-purple-600 bg-clip-text text-transparent'>
+              Professional <span >SEO Services</span> for Modern Businesses
             </h1>
             <p className='text-lg text-gray-400 leading-relaxed'>
               In today's digital landscape, a strong online presence is crucial. We help you dominate search results, 

@@ -54,11 +54,14 @@ const Services = () => {
     >
       <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-20">
 
-        {/* LEFT SIDE (STICKY TITLE) */}
+      {/* LEFT SIDE (STICKY TITLE) */}
         <div className="md:sticky md:top-32 self-start">
-          <h2 className="text-5xl font-bold leading-tight text-[#8259DA]">
+          <h2 className="text-5xl font-bold leading-tight 
+                        bg-gradient-to-r from-white via-purple-500 to-purple-600 
+                        bg-clip-text text-transparent">
             Services
           </h2>
+
           <p className="mt-6 text-gray-400 max-w-sm">
             A focused set of design and development services built to
             create modern, scalable and high-performing digital experiences.

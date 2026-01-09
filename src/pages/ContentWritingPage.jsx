@@ -37,9 +37,9 @@ const ContentWritingPage = () => {
         {/* Editorial Hero Section */}
         <div className='max-w-4xl mb-24'>
           <h2 className='text-[#8b75f2] font-medium tracking-[0.2em] mb-4 uppercase text-sm'>Premium Copywriting</h2>
-          <h1 className='text-6xl md:text-7xl font-serif font-bold mb-8 leading-tight'>
+          <h1 className='text-6xl md:text-7xl font-serif font-bold mb-8 leading-tight bg-gradient-to-r from-white via-purple-400 to-purple-600 bg-clip-text text-transparent'>
             Words that build <br /> 
-            <span className='italic text-[#8b75f2]'>Authority & Trust.</span>
+            <span className='italic bg-gradient-to-r from-white via-purple-400 to-purple-600 bg-clip-text text-transparent'>Authority & Trust.</span>
           </h1>
           <p className='text-xl text-gray-400 leading-relaxed max-w-2xl border-l-2 border-[#8b75f2] pl-6 italic'>
             "Content is the bridge between your brand and your audience. We build that bridge with precision, creativity, and strategic intent."

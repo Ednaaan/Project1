@@ -38,9 +38,9 @@ const DigitalMarketingPage = () => {
         <div className='grid lg:grid-cols-2 gap-16 items-center mb-32'>
           <div>
             <h2 className='text-[#a855f7] font-mono tracking-widest mb-4'>DATA-DRIVEN GROWTH</h2>
-            <h1 className='text-6xl font-extrabold mb-8 leading-[1.1]'>
+            <h1 className='text-6xl font-extrabold mb-8 leading-[1.1] bg-gradient-to-r from-white via-purple-400 to-purple-600 bg-clip-text text-transparent'>
               Scale Your Brand <br /> 
-              <span className='text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-purple-500'>
+              <span className='text-transparent bg-clip-text bg-gradient-to-r from-white via-purple-400 to-purple-600'>
                 Through Digital Mastery
               </span>
             </h1>

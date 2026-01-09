@@ -38,8 +38,8 @@ const WebsiteDesignPage = () => {
         <div className='grid lg:grid-cols-2 gap-12 items-center mb-20'>
           <div className='flex flex-col gap-6'>
             <span className='text-[#8b75f2] font-semibold tracking-wide uppercase text-sm'>Elevate Your Brand</span>
-            <h1 className='text-5xl font-extrabold leading-tight'>
-              Modern <span className='text-[#8b75f2]'>Web Design</span> for Digital Leaders
+            <h1 className='text-5xl font-extrabold leading-tight bg-gradient-to-r from-white via-purple-400 to-purple-600 bg-clip-text text-transparent'>
+              Modern <span>Web Design</span> for Digital Leaders
             </h1>
             <p className='text-lg text-gray-400 leading-relaxed'>
               We craft high-performance websites that blend stunning aesthetics with seamless functionality. 

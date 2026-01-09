@@ -55,9 +55,9 @@ const About = () => {
             ABOUT
           </p>
 
-          <h2 className="about-item uppercase text-3xl sm:text-4xl md:text-5xl font-bold leading-tight">
+          <h2 className="about-item uppercase text-3xl sm:text-4xl md:text-5xl font-bold leading-tight bg-gradient-to-r from-white via-purple-400 to-purple-600 bg-clip-text text-transparent">
             Welcome to Websitedesignland  <br className="hidden md:block" /> 
-            <span className="text-gray-300">Your Trusted Partner in Digital Transformation.</span>
+            <span className="bg-gradient-to-r from-white via-purple-400 to-purple-500 bg-clip-text text-transparent">Your Trusted Partner in Digital Transformation.</span>
           </h2>
 
           <p className="about-item mt-6 text-gray-400 max-w-md mx-auto md:mx-0 text-base md:text-lg">
