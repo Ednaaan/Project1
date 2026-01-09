@@ -126,7 +126,7 @@ const Navbar = () => {
         </ul>
 
         {/* HAMBURGER */}
-        <button className="md:hidden text-2xl" onClick={() => setMenuOpen(!menuOpen)}>
+        <button className="md:hidden text-2xl text-white" onClick={() => setMenuOpen(!menuOpen)}>
           {menuOpen ? "✕" : "☰"}
         </button>
       </div>
