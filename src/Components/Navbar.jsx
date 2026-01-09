@@ -11,6 +11,7 @@ const Navbar = () => {
   const logoRef = useRef(null);
   const linksRef = useRef(null);
   const mobileMenuRef = useRef(null);
+  const hamburgerRef = useRef(null); // Added ref for the toggle button
 
   const [menuOpen, setMenuOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -53,7 +54,8 @@ const Navbar = () => {
         paddingTop: "0.6rem",
         paddingBottom: "0.6rem",
       })
-      .to([logoRef.current, linksRef.current], {
+      // Added hamburgerRef to the color transition
+      .to([logoRef.current, linksRef.current, hamburgerRef.current], {
         color: "#ffffff",
       }, 0);
     }, navRef);
@@ -61,7 +63,7 @@ const Navbar = () => {
     return () => ctx.revert();
   }, []);
 
-  // Mobile menu animation
+  // Mobile menu height animation
   useLayoutEffect(() => {
     if (!mobileMenuRef.current) return;
     gsap.to(mobileMenuRef.current, {
@@ -90,13 +92,11 @@ const Navbar = () => {
           <li><Link to="/" className="hover:opacity-70 transition-opacity">HOME</Link></li>
           <li><Link to="/about" className="hover:opacity-70 transition-opacity">ABOUT</Link></li>
           
-          {/* SERVICES DROPDOWN */}
           <li 
             className="relative group py-2"
             onMouseEnter={() => setDropdownOpen(true)}
             onMouseLeave={() => setDropdownOpen(false)}
           >
-            {/* Clickable Header Link */}
             <Link 
               to="/services" 
               className="flex items-center gap-1 uppercase font-semibold hover:opacity-70 transition-opacity"
@@ -105,7 +105,6 @@ const Navbar = () => {
               <span className={`text-[10px] transition-transform duration-300 ${dropdownOpen ? 'rotate-180' : ''}`}>▼</span>
             </Link>
             
-            {/* DROPDOWN MENU */}
             <div className={`absolute left-0 mt-2 w-64 bg-black/90 backdrop-blur-xl rounded-xl shadow-2xl border border-white/10 overflow-hidden transition-all duration-300 origin-top-left ${dropdownOpen ? 'opacity-100 scale-100' : 'opacity-0 scale-95 pointer-events-none'}`}>
               <div className="py-2">
                 {services.map((service, index) => (
@@ -125,13 +124,18 @@ const Navbar = () => {
           <li><Link to="/contact" className="hover:opacity-70 transition-opacity">CONTACT</Link></li>
         </ul>
 
-        {/* HAMBURGER */}
-        <button className="md:hidden text-2xl text-white" onClick={() => setMenuOpen(!menuOpen)}>
+        {/* HAMBURGER BUTTON */}
+        <button 
+          ref={hamburgerRef}
+          className="md:hidden text-2xl z-50 transition-colors duration-300" 
+          style={{ color: "#000000" }} // Default state is Black
+          onClick={() => setMenuOpen(!menuOpen)}
+        >
           {menuOpen ? "✕" : "☰"}
         </button>
       </div>
 
-      {/* MOBILE MENU */}
+      {/* MOBILE MENU overlay */}
       <div 
         ref={mobileMenuRef} 
         className="md:hidden overflow-hidden bg-black/95 backdrop-blur-2xl px-6 border-b border-white/10" 
