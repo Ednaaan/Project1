@@ -38,8 +38,10 @@ useLayoutEffect(() => {
         start: "top 75%",
       },
     });
+    
 
   }, realityRef);
+  
 
   return () => ctx.revert();
 }, []);
@@ -106,7 +108,7 @@ useLayoutEffect(() => {
             services that actually help businesses move forward.
           </p>
 
-          <button className="reveal-btn mt-6 px-8 py-4 rounded-full bg-purple-600 font-bold text-white">
+          <button className="reveal-btn mt-6 px-8 py-4 rounded-full bg-white font-bold text-black hover:bg-black hover:text-white border border-transparent hover:border-white transition-all duration-300">
             Consult Today
           </button>
 
@@ -114,11 +116,45 @@ useLayoutEffect(() => {
       </section>
 
       
-      <section className="py-20 px-6 border-t border-white/10">
-        <div className="max-w-7xl mx-auto text-center slider">
-          <p className="text-gray-400">★★★★★ Reviews sliding here</p>
+            <section className="py-20 px-6 border-t border-white/10 overflow-hidden">
+        <div className="max-w-7xl mx-auto">
+          
+          <div className="review-track flex gap-12">
+            {[
+              "★★★★★ Top-notch Service",
+              "★★★★★ Exceptional Quality",
+              "★★★★★ Highly Recommend",
+              "★★★★★ Reliable & Professional",
+              "★★★★★ Outstanding Results",
+            ].map((review, index) => (
+              <div
+                key={index}
+                className="review-item shrink-0 bg-white/5 backdrop-blur-lg border border-white/10 rounded-xl px-8 py-4 text-gray-300 text-lg font-medium"
+              >
+                {review}
+              </div>
+            ))}
+
+            {/* DUPLICATE for seamless loop */}
+            {[
+              "★★★★★ Top-notch Service",
+              "★★★★★ Exceptional Quality",
+              "★★★★★ Highly Recommend",
+              "★★★★★ Reliable & Professional",
+              "★★★★★ Outstanding Results",
+            ].map((review, index) => (
+              <div
+                key={`dup-${index}`}
+                className="review-item shrink-0 bg-white/5 backdrop-blur-lg border border-white/10 rounded-xl px-8 py-4 text-gray-300 text-lg font-medium"
+              >
+                {review}
+              </div>
+            ))}
+          </div>
+
         </div>
       </section>
+
 
       
       <section className="py-28 px-6">
