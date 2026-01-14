@@ -135,11 +135,11 @@ const Hero = () => {
           </div>
 
         </div>
-        <div className="w-full bg-purple-600/10 border-b border-white/5 py-3 overflow-hidden">
-  <div className="animate-marquee flex gap-12 items-center">
+        <div className="w-full bg-purple-600/10 border-b border-white/5 py-3 overflow-hidden mt-10 md:mt-16 lg:mt-20">
+    <div className="animate-marquee flex gap-12 items-center">
     
-    {/* Pehli baar text */}
-        <div className="flex gap-12 items-center px-4 shrink-0 mt-4">
+    
+        <div className="flex gap-12 items-center px-4 shrink-0">
           <span className="text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] bg-gradient-to-r from-white via-white to-purple-500 bg-clip-text text-transparent mt-2 text-2xl">10+ years of Experience</span>
           <span className="text-white/20">|</span>
           <span className="text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] bg-gradient-to-r from-white via-white to-purple-500 bg-clip-text text-transparent mt-2 text-2xl">95% Client Retention Rate</span>
@@ -147,7 +147,7 @@ const Hero = () => {
           <span className="text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] bg-gradient-to-r from-white via-white to-purple-500 bg-clip-text text-transparent mt-2 text-2xl">4.9/5★ Rated on Google</span>
         </div>
 
-        {/* Duplicate text (Seamless loop ke liye zaroori hai) */}
+        
         <div className="flex gap-12 items-center px-4 shrink-0">
           <span className="text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] bg-gradient-to-r from-white via-white to-purple-500 bg-clip-text text-transparent mt-2 text-2xl">10+ years of Experience</span>
           <span className="text-white/20">|</span>
