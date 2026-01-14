@@ -67,7 +67,7 @@ const Hero = () => {
               <span className="stack-line block text-4xl sm:text-3xl md:text-4xl lg:text-5xl uppercase">Clicks Into Real Enquiries</span>
             </h1>
             <h2 className="bg-gradient-to-r from-white via-white to-purple-500 bg-clip-text text-transparent mt-2 text-2xl">Stop Guessing. Start Growing.</h2>
-            <p className="mt-6 md:mt-8 text-gray-400 text-sm md:text-base lg:text-lg max-w-xl mx-auto lg:mx-0">
+            <p className="mt-2 md:mt-3 text-gray-400 text-sm md:text-base lg:text-lg max-w-xl mx-auto lg:mx-0">
               Websites, ads, and growth AI powered systems that help businesses turn traffic into paying customers.
             </p>
             <div onClick={() => document.getElementById("Form")?.scrollIntoView({ behavior: "smooth" })} className="mt-8 md:mt-10 md:flex md:justify-center lg:justify-start">
@@ -140,20 +140,20 @@ const Hero = () => {
     
     
         <div className="flex gap-12 items-center px-4 shrink-0">
-          <span className="text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] bg-gradient-to-r from-white via-white to-purple-500 bg-clip-text text-transparent mt-2 text-2xl">10+ years of Experience</span>
+          <span className="text-[10px] md:text-2xl font-bold uppercase tracking-[0.2em] bg-gradient-to-r from-white via-white to-purple-500 bg-clip-text text-transparent mt-2 text-2xl">10+ years of Experience</span>
           <span className="text-white/20">|</span>
-          <span className="text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] bg-gradient-to-r from-white via-white to-purple-500 bg-clip-text text-transparent mt-2 text-2xl">95% Client Retention Rate</span>
+          <span className="text-[10px] md:text-2xl font-bold uppercase tracking-[0.2em] bg-gradient-to-r from-white via-white to-purple-500 bg-clip-text text-transparent mt-2 text-2xl">95% Client Retention Rate</span>
           <span className="text-white/20">|</span>
-          <span className="text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] bg-gradient-to-r from-white via-white to-purple-500 bg-clip-text text-transparent mt-2 text-2xl">4.9/5★ Rated on Google</span>
+          <span className="text-[10px] md:text-2xl font-bold uppercase tracking-[0.2em] bg-gradient-to-r from-white via-white to-purple-500 bg-clip-text text-transparent mt-2 text-2xl">4.9/5★ Rated on Google</span>
         </div>
 
         
         <div className="flex gap-12 items-center px-4 shrink-0">
-          <span className="text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] bg-gradient-to-r from-white via-white to-purple-500 bg-clip-text text-transparent mt-2 text-2xl">10+ years of Experience</span>
+          <span className="text-[10px] md:text-3xl font-bold uppercase tracking-[0.2em] bg-gradient-to-r from-white via-white to-purple-500 bg-clip-text text-transparent mt-2 text-2xl">10+ years of Experience</span>
           <span className="text-white/20">|</span>
-          <span className="text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] bg-gradient-to-r from-white via-white to-purple-500 bg-clip-text text-transparent mt-2 text-2xl">95% Client Retention Rate</span>
+          <span className="text-[10px] md:text-3xl font-bold uppercase tracking-[0.2em] bg-gradient-to-r from-white via-white to-purple-500 bg-clip-text text-transparent mt-2 text-2xl">95% Client Retention Rate</span>
           <span className="text-white/20">|</span>
-          <span className="text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] bg-gradient-to-r from-white via-white to-purple-500 bg-clip-text text-transparent mt-2 text-2xl">4.9/5★ Rated on Google</span>
+          <span className="text-[10px] md:text-3xl font-bold uppercase tracking-[0.2em] bg-gradient-to-r from-white via-white to-purple-500 bg-clip-text text-transparent mt-2 text-2xl">4.9/5★ Rated on Google</span>
         </div>
 
       </div>

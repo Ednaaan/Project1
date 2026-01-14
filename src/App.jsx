@@ -7,7 +7,7 @@ import AboutPage from "./pages/AboutPage";
 import ServicesPage from "./pages/ServicesPage";
 
 import RecentWorkPage from "./pages/RecentWorkPage";
-import ContactPage from "./pages/ContactPage";
+// import ContactPage from "./pages/ContactPage";
 import CustomCursor from "./Components/CustomCursor";
 import SeoPage from "./pages/SeoPage";
 import WebsiteDesignPage from "./pages/WebsiteDesignPage";
@@ -36,7 +36,7 @@ const App = () => {
         <Route path = "/content-writing" element = {<ContentWritingPage/>}/>
         <Route path = "/paid-ads" element = {<PaidAdsPage/>}/>
         <Route path="/work" element={<RecentWorkPage />} />
-        <Route path="/contact" element={<ContactPage />} />
+        {/* <Route path="/contact" element={<ContactPage />} /> */}
       </Routes>
 
       <Footer />
