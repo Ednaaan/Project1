@@ -67,7 +67,7 @@ const Hero = () => {
               <span className="stack-line block text-4xl sm:text-5xl md:text-6xl lg:text-8xl">EXPERIENCES</span>
             </h1>
             <p className="mt-6 md:mt-8 text-gray-400 text-sm md:text-base lg:text-lg max-w-xl mx-auto lg:mx-0">
-              A design-led studio crafting clean, modern and user-focused web interfaces.
+              Digital Marketing Services That Turn Clicks Into Real Enquiries
             </p>
             <div onClick={() => document.getElementById("Form")?.scrollIntoView({ behavior: "smooth" })} className="mt-8 md:mt-10 md:flex md:justify-center lg:justify-start">
               <button className="group relative px-8 py-3 md:px-12 md:py-4 bg-transparent border border-white/20 rounded-full overflow-hidden transition-all active:scale-95">

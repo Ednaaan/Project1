@@ -1,6 +1,6 @@
 import React from 'react';
 import { Target, TrendingUp, Mail, Share2, MousePointer2, BarChart } from 'lucide-react';
-// Import the video I just generated for you
+
 import marketingVideo from '../assets/Animation_Video_Generation_Complete.mp4'; 
 
 const DigitalMarketingPage = () => {
