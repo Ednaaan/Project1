@@ -1,7 +1,8 @@
 import React from 'react';
 import { Target, TrendingUp, Mail, Share2, MousePointer2, BarChart } from 'lucide-react';
 
-import marketingVideo from '../assets/Animation_Video_Generation_Complete.mp4'; 
+// import marketingVideo from '../assets/Animation_Video_Generation_Complete.mp4'; 
+import bentoImg from '../assets/seoImage.jpg'; 
 
 const DigitalMarketingPage = () => {
   const strategies = [
@@ -26,6 +27,13 @@ const DigitalMarketingPage = () => {
       icon: <Target className="w-6 h-6 text-[#a855f7]" />
     }
   ];
+
+  const sliceStyle = {
+      backgroundImage: `url(${bentoImg})`,
+      boxShadow: '0 0 20px rgba(99, 69, 237, 0.1)'
+    };
+  
+    const sliceClass = "rounded-2xl bg-fixed bg-cover bg-center border border-white/10 hover:border-[#8b75f2]/40 transition-colors duration-500";
 
   return (
     <section className='bg-[#0a0a0a] text-white min-h-screen pt-32 pb-16 relative'>
@@ -62,7 +70,7 @@ const DigitalMarketingPage = () => {
           </div>
 
           {/* Video Section */}
-          <div className='relative group'>
+          {/* <div className='relative group'>
             <div className='absolute -inset-1 bg-gradient-to-r from-purple-600 to-blue-600 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000'></div>
             <div className='relative rounded-2xl overflow-hidden bg-black border border-white/10 aspect-video'>
               <video 
@@ -71,7 +79,39 @@ const DigitalMarketingPage = () => {
                 className="w-full h-full object-cover"
               />
             </div>
+          </div> */}
+           {/* Right Side: Sliced Bento Grid */}
+          <div className='grid grid-cols-4 grid-rows-3 gap-3 h-[500px] w-full'>
+            {/* Big Square Slice */}
+            <div 
+              className={`col-span-2 row-span-2 ${sliceClass}`}
+              style={sliceStyle}
+            />
+            {/* Top Right Slice */}
+            <div 
+              className={`col-span-2 row-span-1 ${sliceClass}`}
+              style={sliceStyle}
+            />
+            {/* Mid Slices */}
+            <div 
+              className={`col-span-1 row-span-1 ${sliceClass}`}
+              style={sliceStyle}
+            />
+            <div 
+              className={`col-span-1 row-span-1 ${sliceClass}`}
+              style={sliceStyle}
+            />
+            {/* Bottom Slices */}
+            <div 
+              className={`col-span-3 row-span-1 ${sliceClass}`}
+              style={sliceStyle}
+            />
+            <div 
+              className={`col-span-1 row-span-1 ${sliceClass}`}
+              style={sliceStyle}
+            />
           </div>
+          
         </div>
 
         {/* Strategy Grid */}

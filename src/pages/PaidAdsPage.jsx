@@ -1,7 +1,8 @@
 import React from 'react';
 import { Target, MousePointerClick, BarChart4, PieChart, ShieldCheck, Zap } from 'lucide-react';
 // Import the video generated for this page
-import adsVideo from '../assets/Animation_Video_Generation_Complete.mp4'; 
+// import adsVideo from '../assets/Animation_Video_Generation_Complete.mp4'; 
+import bentoImg from '../assets/seoImage.jpg'; 
 
 const PaidAdsPage = () => {
   const adPlatforms = [
@@ -26,6 +27,13 @@ const PaidAdsPage = () => {
       icon: <PieChart className="w-6 h-6 text-[#8b75f2]" />
     }
   ];
+
+   const sliceStyle = {
+      backgroundImage: `url(${bentoImg})`,
+      boxShadow: '0 0 20px rgba(99, 69, 237, 0.1)'
+    };
+  
+    const sliceClass = "rounded-2xl bg-fixed bg-cover bg-center border border-white/10 hover:border-[#8b75f2]/40 transition-colors duration-500";
 
   return (
     <section className='bg-[#080808] text-white min-h-screen pt-32 pb-16 relative overflow-hidden'>
@@ -59,15 +67,36 @@ const PaidAdsPage = () => {
           </div>
 
           {/* Video / Visual Asset */}
-          <div className='relative'>
-            <div className='absolute -inset-4 bg-[#8b75f2]/20 blur-3xl rounded-full opacity-30 animate-pulse' />
-            <div className='relative rounded-3xl border border-white/10 overflow-hidden bg-black aspect-video shadow-2xl'>
-              <video 
-                src={adsVideo} 
-                autoPlay loop muted playsInline 
-                className="w-full h-full object-cover"
-              />
-            </div>
+          {/* Right Side: Sliced Bento Grid */}
+          <div className='grid grid-cols-4 grid-rows-3 gap-3 h-[500px] w-full'>
+            {/* Big Square Slice */}
+            <div 
+              className={`col-span-2 row-span-2 ${sliceClass}`}
+              style={sliceStyle}
+            />
+            {/* Top Right Slice */}
+            <div 
+              className={`col-span-2 row-span-1 ${sliceClass}`}
+              style={sliceStyle}
+            />
+            {/* Mid Slices */}
+            <div 
+              className={`col-span-1 row-span-1 ${sliceClass}`}
+              style={sliceStyle}
+            />
+            <div 
+              className={`col-span-1 row-span-1 ${sliceClass}`}
+              style={sliceStyle}
+            />
+            {/* Bottom Slices */}
+            <div 
+              className={`col-span-3 row-span-1 ${sliceClass}`}
+              style={sliceStyle}
+            />
+            <div 
+              className={`col-span-1 row-span-1 ${sliceClass}`}
+              style={sliceStyle}
+            />
           </div>
         </div>
 

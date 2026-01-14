@@ -1,6 +1,8 @@
 import React from 'react';
 import { Layout, Palette, MousePointer2, Smartphone, CheckCircle2 } from 'lucide-react';
-import designVideo from '../assets/Animation_Video_Generation_Complete.mp4';
+// import designVideo from '../assets/Animation_Video_Generation_Complete.mp4';
+
+import bentoImg from '../assets/seoImage.jpg'; 
 
 const WebsiteDesignPage = () => {
   const features = [
@@ -25,6 +27,13 @@ const WebsiteDesignPage = () => {
       icon: <Layout className="w-6 h-6 text-[#8b75f2]" />
     }
   ];
+
+  const sliceStyle = {
+      backgroundImage: `url(${bentoImg})`,
+      boxShadow: '0 0 20px rgba(99, 69, 237, 0.1)'
+    };
+  
+    const sliceClass = "rounded-2xl bg-fixed bg-cover bg-center border border-white/10 hover:border-[#8b75f2]/40 transition-colors duration-500";
 
   return (
     <section className='bg-black text-white min-h-screen relative overflow-hidden pt-32 pb-16'>
@@ -56,7 +65,7 @@ const WebsiteDesignPage = () => {
           </div>
 
           {/* Video Container */}
-          <div 
+          {/* <div 
             className='relative rounded-2xl overflow-hidden bg-black/40 backdrop-blur-md border border-white/10 aspect-video flex items-center justify-center'
             style={{ boxShadow: '0 0 40px rgba(99, 69, 237, 0.15)' }}
           >
@@ -69,7 +78,40 @@ const WebsiteDesignPage = () => {
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-[#6345ed]/5 pointer-events-none" />
+          </div> */}
+
+          <div className='grid grid-cols-4 grid-rows-3 gap-3 h-[500px] w-full'>
+            {/* Big Square Slice */}
+            <div 
+              className={`col-span-2 row-span-2 ${sliceClass}`}
+              style={sliceStyle}
+            />
+            {/* Top Right Slice */}
+            <div 
+              className={`col-span-2 row-span-1 ${sliceClass}`}
+              style={sliceStyle}
+            />
+            {/* Mid Slices */}
+            <div 
+              className={`col-span-1 row-span-1 ${sliceClass}`}
+              style={sliceStyle}
+            />
+            <div 
+              className={`col-span-1 row-span-1 ${sliceClass}`}
+              style={sliceStyle}
+            />
+            {/* Bottom Slices */}
+            <div 
+              className={`col-span-3 row-span-1 ${sliceClass}`}
+              style={sliceStyle}
+            />
+            <div 
+              className={`col-span-1 row-span-1 ${sliceClass}`}
+              style={sliceStyle}
+            />
           </div>
+
+
         </div>
 
         <hr className='border-white/5 mb-20' />

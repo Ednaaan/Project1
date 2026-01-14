@@ -64,7 +64,7 @@ const RecentWork = () => {
 
         {/* Bottom Button */}
         <div className='text-center mt-12 md:mt-16'>
-          <button className='group relative w-full md:w-auto px-12 py-5 bg-transparent border border-white/20 rounded-full overflow-hidden transition-all active:scale-95'>
+          <button  className='group relative w-full md:w-auto px-12 py-5 bg-transparent border border-white/20 rounded-full overflow-hidden transition-all active:scale-95'>
             <span className='relative z-10 text-white font-bold text-sm md:text-base transition-colors group-hover:text-black uppercase'>
                 Explore All Works
             </span>

@@ -123,7 +123,7 @@ const Hero = () => {
                     />
                   </div>
 
-                  <button type="submit" className="bg-white text-black font-bold py-3.5 rounded-xl hover:bg-gray-200 transition-all mt-4 active:scale-95 text-sm uppercase tracking-widest">
+                  <button  type="submit" className="bg-white text-black font-bold py-3.5 rounded-xl hover:bg-gray-200 transition-all mt-4 active:scale-95 text-sm uppercase tracking-widest">
                     SEND REQUEST
                   </button>
                 </div>
