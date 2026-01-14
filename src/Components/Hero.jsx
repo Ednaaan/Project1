@@ -62,12 +62,13 @@ const Hero = () => {
           
           <div className="text-left md:text-center lg:text-left">
             <h1 className={`font-extrabold leading-[0.95] md:leading-[0.9] transition-colors duration-500 ${scrolled ? "text-gray-400" : "text-white"}`}>
-              <span className="stack-line block text-4xl sm:text-5xl md:text-6xl lg:text-8xl">DESIGNING</span>
-              <span className="stack-line block text-4xl sm:text-5xl md:text-6xl lg:text-8xl">DIGITAL</span>
-              <span className="stack-line block text-4xl sm:text-5xl md:text-6xl lg:text-8xl">EXPERIENCES</span>
+              <span className="stack-line block text-4xl sm:text-4xl md:text-5xl lg:text-6xl uppercase">Digital Marketing</span>
+              <span className="stack-line block text-4xl sm:text-3xl md:text-4xl lg:text-5xl uppercase">Services That Turn</span>
+              <span className="stack-line block text-4xl sm:text-3xl md:text-4xl lg:text-5xl uppercase">Clicks Into Real Enquiries</span>
             </h1>
+            <h2 className="bg-gradient-to-r from-white via-white to-purple-500 bg-clip-text text-transparent mt-2 text-2xl">Stop Guessing. Start Growing.</h2>
             <p className="mt-6 md:mt-8 text-gray-400 text-sm md:text-base lg:text-lg max-w-xl mx-auto lg:mx-0">
-              Digital Marketing Services That Turn Clicks Into Real Enquiries
+              Websites, ads, and growth AI powered systems that help businesses turn traffic into paying customers.
             </p>
             <div onClick={() => document.getElementById("Form")?.scrollIntoView({ behavior: "smooth" })} className="mt-8 md:mt-10 md:flex md:justify-center lg:justify-start">
               <button className="group relative px-8 py-3 md:px-12 md:py-4 bg-transparent border border-white/20 rounded-full overflow-hidden transition-all active:scale-95">
@@ -76,6 +77,8 @@ const Hero = () => {
               </button>
             </div>
           </div>
+
+
 
           
           <div id="Form" className="flex justify-center lg:justify-end mt-8 lg:mt-0">
@@ -132,6 +135,29 @@ const Hero = () => {
           </div>
 
         </div>
+        <div className="w-full bg-purple-600/10 border-b border-white/5 py-3 overflow-hidden">
+  <div className="animate-marquee flex gap-12 items-center">
+    
+    {/* Pehli baar text */}
+        <div className="flex gap-12 items-center px-4 shrink-0 mt-4">
+          <span className="text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] bg-gradient-to-r from-white via-white to-purple-500 bg-clip-text text-transparent mt-2 text-2xl">10+ years of Experience</span>
+          <span className="text-white/20">|</span>
+          <span className="text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] bg-gradient-to-r from-white via-white to-purple-500 bg-clip-text text-transparent mt-2 text-2xl">95% Client Retention Rate</span>
+          <span className="text-white/20">|</span>
+          <span className="text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] bg-gradient-to-r from-white via-white to-purple-500 bg-clip-text text-transparent mt-2 text-2xl">4.9/5★ Rated on Google</span>
+        </div>
+
+        {/* Duplicate text (Seamless loop ke liye zaroori hai) */}
+        <div className="flex gap-12 items-center px-4 shrink-0">
+          <span className="text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] bg-gradient-to-r from-white via-white to-purple-500 bg-clip-text text-transparent mt-2 text-2xl">10+ years of Experience</span>
+          <span className="text-white/20">|</span>
+          <span className="text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] bg-gradient-to-r from-white via-white to-purple-500 bg-clip-text text-transparent mt-2 text-2xl">95% Client Retention Rate</span>
+          <span className="text-white/20">|</span>
+          <span className="text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] bg-gradient-to-r from-white via-white to-purple-500 bg-clip-text text-transparent mt-2 text-2xl">4.9/5★ Rated on Google</span>
+        </div>
+
+      </div>
+    </div>
       </div>
     </section>
   );

@@ -7,3 +7,20 @@ html, body {
   overflow-x: hidden;
   width: 100%;
 }
+
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: flex;
+  white-space: nowrap;
+  animation: marquee 20s linear infinite;
+}
+
+/* Optional: Hover karne par ruk jayega */
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
