@@ -1,6 +1,6 @@
 import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
-import emailjs from "@emailjs/browser"; // Added this
+import emailjs from "@emailjs/browser"; 
 import backgroundImage from "../assets/backgroundImage2.png";
 
 const Hero = () => {
@@ -16,10 +16,8 @@ const Hero = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Updated Send Logic
   const sendEmail = (e) => {
     e.preventDefault();
-
     emailjs.sendForm(
       "service_3z8fsac",   
       "template_fbnj7jd", 
@@ -49,16 +47,16 @@ const Hero = () => {
   return (
     <section
       ref={heroRef}
-      className="min-h-screen bg-black pt-24 md:pt-28 lg:pt-32 pb-20 flex items-center"
+      className="min-h-screen bg-black pt-20 md:pt-24 pb-10 flex flex-col justify-between mt-8" 
       style={{
         backgroundImage: `url(${backgroundImage})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
     >
-      <div className="max-w-7xl mx-auto px-6 w-full">
-        <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-10 md:gap-12 lg:gap-16 items-center">
-          
+      {/* 1. Main Content Wrapper */}
+      <div className="max-w-7xl mx-auto px-6 w-full flex-grow flex items-center">
+        <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-10 md:gap-12 lg:gap-16 items-center w-full">
           
           <div className="text-left md:text-center lg:text-left">
             <h1 className={`font-extrabold leading-[0.95] md:leading-[0.9] transition-colors duration-500 ${scrolled ? "text-gray-400" : "text-white"}`}>
@@ -78,26 +76,19 @@ const Hero = () => {
             </div>
           </div>
 
-
-
-          
           <div id="Form" className="flex justify-center lg:justify-end mt-8 lg:mt-0">
             <div className="w-full max-w-md md:max-w-lg">
-             
               <form ref={form} onSubmit={sendEmail} className="bg-black/60 backdrop-blur-xl p-6 md:p-10 rounded-2xl border border-white/10 space-y-5 shadow-2xl">
                 <h2 className="text-xl md:text-2xl font-bold text-white tracking-tight">Lets Get Started</h2>
                 <div className="flex flex-col gap-4 text-white">
-                  
                   <div className="flex flex-col gap-1.5">
                     <label className="text-xs uppercase tracking-wider font-semibold text-gray-400">Full Name</label>
                     <input name="user_name" type="text" required className="bg-white/5 border border-white/10 rounded-lg px-4 py-2.5 outline-none focus:border-white/40 text-sm" placeholder="Your Name" />
                   </div>
-
                   <div className="flex flex-col gap-1.5">
                     <label className="text-xs uppercase tracking-wider font-semibold text-gray-400">Email Address</label>
                     <input name="user_email" type="email" required className="bg-white/5 border border-white/10 rounded-lg px-4 py-2.5 outline-none focus:border-white/40 text-sm" placeholder="email@example.com" />
                   </div>
-
                   <div className="flex flex-col gap-1.5">
                     <label className="text-xs uppercase tracking-wider font-semibold text-gray-400">Service</label>
                     <select name="service" required className="bg-white/5 border border-white/10 rounded-lg px-4 py-2.5 outline-none focus:border-white/40 text-white appearance-none cursor-pointer text-sm">
@@ -109,55 +100,43 @@ const Hero = () => {
                       <option className="bg-zinc-900" value="UX/UI Design">UX/UI Design</option>
                     </select>
                   </div>
-
                   <div className="flex flex-col gap-1.5">
                     <label className="text-xs uppercase tracking-wider font-semibold text-gray-400">Budget</label>
                     <input name="budget" type="text" required className="bg-white/5 border border-white/10 rounded-lg px-4 py-2.5 outline-none focus:border-white/40 text-sm" placeholder="Share Your Budget" />
                   </div>
-
-                   <div className="flex flex-col gap-1.5">
+                  <div className="flex flex-col gap-1.5">
                     <label className="text-xs uppercase tracking-wider font-semibold text-gray-400">Message</label>
-                   <textarea 
-                      name="message" 
-                      required 
-                      rows=""
-                      className="bg-white/5 border border-white/10 rounded-lg px-4 py-2.5 outline-none focus:border-white/40 text-sm resize-none" 
-                      placeholder="Tell us more about your project..." 
-                    />
+                    <textarea name="message" required className="bg-white/5 border border-white/10 rounded-lg px-4 py-2.5 outline-none focus:border-white/40 text-sm resize-none" placeholder="Tell us more about your project..." />
                   </div>
-
-                  <button  type="submit" className="bg-white text-black font-bold py-3.5 rounded-xl hover:bg-gray-200 transition-all mt-4 active:scale-95 text-sm uppercase tracking-widest">
+                  <button type="submit" className="bg-white text-black font-bold py-3.5 rounded-xl hover:bg-gray-200 transition-all mt-4 active:scale-95 text-sm uppercase tracking-widest">
                     SEND REQUEST
                   </button>
                 </div>
               </form>
             </div>
           </div>
-
         </div>
-        <div className="w-full bg-purple-600/10 border-b border-white/5 py-3 overflow-hidden mt-10 md:mt-16 lg:mt-20">
-    <div className="animate-marquee flex gap-12 items-center">
-    
-    
-        <div className="flex gap-12 items-center px-4 shrink-0">
-          <span className="text-[10px] md:text-2xl font-bold uppercase tracking-[0.2em] bg-gradient-to-r from-white via-white to-purple-500 bg-clip-text text-transparent mt-2 text-2xl">10+ years of Experience</span>
-          <span className="text-white/20">|</span>
-          <span className="text-[10px] md:text-2xl font-bold uppercase tracking-[0.2em] bg-gradient-to-r from-white via-white to-purple-500 bg-clip-text text-transparent mt-2 text-2xl">95% Client Retention Rate</span>
-          <span className="text-white/20">|</span>
-          <span className="text-[10px] md:text-2xl font-bold uppercase tracking-[0.2em] bg-gradient-to-r from-white via-white to-purple-500 bg-clip-text text-transparent mt-2 text-2xl">4.9/5★ Rated on Google</span>
-        </div>
-
-        
-        <div className="flex gap-12 items-center px-4 shrink-0">
-          <span className="text-[10px] md:text-3xl font-bold uppercase tracking-[0.2em] bg-gradient-to-r from-white via-white to-purple-500 bg-clip-text text-transparent mt-2 text-2xl">10+ years of Experience</span>
-          <span className="text-white/20">|</span>
-          <span className="text-[10px] md:text-3xl font-bold uppercase tracking-[0.2em] bg-gradient-to-r from-white via-white to-purple-500 bg-clip-text text-transparent mt-2 text-2xl">95% Client Retention Rate</span>
-          <span className="text-white/20">|</span>
-          <span className="text-[10px] md:text-3xl font-bold uppercase tracking-[0.2em] bg-gradient-to-r from-white via-white to-purple-500 bg-clip-text text-transparent mt-2 text-2xl">4.9/5★ Rated on Google</span>
-        </div>
-
       </div>
-    </div>
+
+      {/* 2. Sliding Marquee - Moved OUTSIDE the container to be 100% Width */}
+      <div className="w-full bg-purple-600/10 border-b border-t border-white/5 py-4 overflow-hidden mt-8 md:mt-12">
+        <div className="animate-marquee flex gap-12 items-center">
+          <div className="flex gap-12 items-center px-4 shrink-0">
+            <span className="text-xl md:text-3xl font-bold uppercase tracking-[0.2em] bg-gradient-to-r from-white via-white to-purple-500 bg-clip-text text-transparent">10+ years of Experience</span>
+            <span className="text-white/20">|</span>
+            <span className="text-xl md:text-3xl font-bold uppercase tracking-[0.2em] bg-gradient-to-r from-white via-white to-purple-500 bg-clip-text text-transparent">95% Client Retention Rate</span>
+            <span className="text-white/20">|</span>
+            <span className="text-xl md:text-3xl font-bold uppercase tracking-[0.2em] bg-gradient-to-r from-white via-white to-purple-500 bg-clip-text text-transparent">4.9/5★ Rated on Google</span>
+          </div>
+          {/* Duplicate set for seamless scrolling */}
+          <div className="flex gap-12 items-center px-4 shrink-0">
+            <span className="text-xl md:text-3xl font-bold uppercase tracking-[0.2em] bg-gradient-to-r from-white via-white to-purple-500 bg-clip-text text-transparent">10+ years of Experience</span>
+            <span className="text-white/20">|</span>
+            <span className="text-xl md:text-3xl font-bold uppercase tracking-[0.2em] bg-gradient-to-r from-white via-white to-purple-500 bg-clip-text text-transparent">95% Client Retention Rate</span>
+            <span className="text-white/20">|</span>
+            <span className="text-xl md:text-3xl font-bold uppercase tracking-[0.2em] bg-gradient-to-r from-white via-white to-purple-500 bg-clip-text text-transparent">4.9/5★ Rated on Google</span>
+          </div>
+        </div>
       </div>
     </section>
   );

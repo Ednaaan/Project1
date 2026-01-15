@@ -68,11 +68,11 @@ const ProcessSteps = () => {
   }, []);
 
   return (
-    <section ref={containerRef} className="bg-[#050505] text-white py-24 md:py-40 overflow-hidden">
+    <section ref={containerRef} className="bg-[#050505] text-white py-16 md:py-24 -mt-10 md:-mt-20 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         
         {/* Header */}
-        <div className="text-center mb-20 md:mb-32">
+        <div className="text-center mb-12 md:mb-16">
           <h2 className="text-4xl md:text-6xl font-black uppercase tracking-tighter mb-6">
             What happens <span className="bg-gradient-to-r from-white via-purple-400 to-purple-500 bg-clip-text text-transparent">after I enquire?</span>
           </h2>

@@ -2,6 +2,7 @@ import React, { useLayoutEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { CheckCircle2, TrendingUp, ShieldCheck, Zap } from 'lucide-react';
+import ClientSlider from './ClientSlider';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -29,8 +30,8 @@ const Content = () => {
   }, []);
 
   return (
-    <section ref={containerRef} className="bg-[#050505] text-white py-24 md:py-40">
-      <div className="max-w-7xl mx-auto px-6 space-y-32 md:space-y-48">
+    <section ref={containerRef} className="bg-[#050505] text-white py-16 md:py-24 overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6 space-y-20 md:space-y-32">
         
         {/* ROW 1: THE PROBLEM */}
         <div className="content-row grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16 items-start">
@@ -74,11 +75,14 @@ const Content = () => {
             </div>
              <p className="text-gray-400 text-lg mt-8">Our digital marketing services are structured to support businesses that want clarity, transparency, and consistent results. Every campaign, page, and strategy is aligned with real commercial outcomes.
             </p>
-            <button className="mt-10 px-8 py-4 bg-white text-black font-black uppercase text-xs tracking-widest rounded-full hover:bg-purple-600 hover:text-white transition-all">
-              Consult Today
-            </button>
+            <button onClick={() => document.getElementById("Form")?.scrollIntoView({ behavior: "smooth" })} className="mt-5 group relative px-8 py-3 md:px-12 md:py-4 bg-transparent border border-white/20 rounded-full overflow-hidden transition-all active:scale-95">
+                <span className="relative z-10 text-white font-bold text-sm md:text-base transition-colors group-hover:text-black">Consult Today</span>
+                <div className="absolute inset-0 bg-white translate-y-[101%] group-hover:translate-y-0 transition-transform duration-300"></div>
+              </button>
           </div>
         </div>
+
+        <ClientSlider/>
 
        
        
@@ -137,9 +141,10 @@ This includes:
             </div>
              <p className="text-gray-400 text-lg mt-8">By aligning content with local search behaviour, we help businesses attract customers who are ready to take action.
             </p>
-            <button className="mt-10 px-8 py-4 bg-white text-black font-black uppercase text-xs tracking-widest rounded-full hover:bg-purple-600 hover:text-white transition-all">
-              Consult Today
-            </button>
+            <button onClick={() => document.getElementById("Form")?.scrollIntoView({ behavior: "smooth" })} className="mt-5 group relative px-8 py-3 md:px-12 md:py-4 bg-transparent border border-white/20 rounded-full overflow-hidden transition-all active:scale-95">
+                <span className="relative z-10 text-white font-bold text-sm md:text-base transition-colors group-hover:text-black">Consult Today</span>
+                <div className="absolute inset-0 bg-white translate-y-[101%] group-hover:translate-y-0 transition-transform duration-300"></div>
+              </button>
           </div>
         </div>
 
@@ -154,7 +159,7 @@ This includes:
           <div className="md:col-span-7">
             <p className="text-gray-400 text-lg mb-10">When visitors compare options, trust is the decider. We design marketing for local businesses that reflects how people actually choose service providers.</p>
             
-            {/* Trust Stats Integrated inside the row */}
+            
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 mb-12 border-y border-white/10 py-8">
               <div>
                 <p className="text-3xl font-black">10+</p>
@@ -172,13 +177,12 @@ This includes:
             
             
 
-            <div className="flex flex-wrap gap-4">
-              <button className="px-8 py-4 bg-purple-600 text-white font-black uppercase text-xs tracking-widest rounded-full hover:bg-purple-500 transition-all">
-                Consult Today
+            <div onClick={() => document.getElementById("Form")?.scrollIntoView({ behavior: "smooth" })} className="flex flex-wrap gap-4">
+              <button className="mt-5 group relative px-8 py-3 md:px-12 md:py-4 bg-transparent border border-white/20 rounded-full overflow-hidden transition-all active:scale-95">
+                <span className="relative z-10 text-white font-bold text-sm md:text-base transition-colors group-hover:text-black">Consult Today</span>
+                <div className="absolute inset-0 bg-white translate-y-[101%] group-hover:translate-y-0 transition-transform duration-300"></div>
               </button>
-              <button className="px-8 py-4 bg-transparent border border-white/20 text-white font-black uppercase text-xs tracking-widest rounded-full hover:bg-white hover:text-black transition-all">
-                Get Free Quote Now
-              </button>
+              
             </div>
           </div>
         </div>

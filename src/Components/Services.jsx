@@ -51,7 +51,7 @@ const Services = () => {
   return (
     <section
       ref={sectionRef}
-      className="bg-[#0f0f0f] text-white py-24 md:py-32 min-h-screen"
+      className="bg-[#0f0f0f] text-white py-16 md:py-24 min-h-screen"
     >
       <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 md:gap-20">
 

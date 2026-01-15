@@ -67,7 +67,7 @@ const FAQItem = ({ question, answer, isOpen, onClick }) => {
   }, [isOpen]);
 
   return (
-    <div className={`mt-8 border-b border-white/10 transition-colors duration-300 ${isOpen ? 'bg-white/5' : 'hover:bg-white/[0.02]'}`}>
+    <div className={`border-b border-white/10 transition-colors duration-300 ${isOpen ? 'bg-white/5' : 'hover:bg-white/[0.02]'}`}>
       <button
         onClick={onClick}
         className="w-full flex items-center justify-between py-6 px-4 md:px-8 text-left outline-none"
@@ -95,11 +95,11 @@ const FAQ = () => {
   const [openIndex, setOpenIndex] = useState(0); 
 
   return (
-    <section className="bg-[#050505] text-white py-24 md:py-40">
+    <section className="bg-[#050505] text-white py-16 md:py-24">
       <div className="max-w-4xl mx-auto px-6">
         
         
-        <div className="text-center mb-16 md:mb-24">
+        <div className="text-center mb-10 md:mb-12">
           <h1 className="text-4xl md:text-6xl font-black uppercase tracking-tighter bg-gradient-to-r from-white via-purple-400 to-purple-500 bg-clip-text text-transparent">
             Frequently asked Questions
           </h1>
