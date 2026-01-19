@@ -7,7 +7,8 @@ import RecentWork from '../Components/RecentWork'
 import Content from '../Components/Content'
 import ProcessSteps from '../Components/ProcessSteps'
 import FAQ from '../Components/FAQ'
-// import Contact from '../Components/Contact'
+
+
 
 const Home = () => {
   return (
@@ -21,8 +22,9 @@ const Home = () => {
     <ProcessSteps/>
     
     <FAQ/>
+  
    
-    {/* <Contact/> */}
+    
     </>
   )
 }

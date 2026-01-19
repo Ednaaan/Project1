@@ -64,23 +64,7 @@ const WebsiteDesignPage = () => {
             </div>
           </div>
 
-          {/* Video Container */}
-          {/* <div 
-            className='relative rounded-2xl overflow-hidden bg-black/40 backdrop-blur-md border border-white/10 aspect-video flex items-center justify-center'
-            style={{ boxShadow: '0 0 40px rgba(99, 69, 237, 0.15)' }}
-          >
-            <video 
-              src={designVideo} 
-              autoPlay 
-              loop 
-              muted 
-              playsInline 
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 bg-[#6345ed]/5 pointer-events-none" />
-          </div> */}
-
-          <div className='grid grid-cols-4 grid-rows-3 gap-3 h-[500px] w-full'>
+          <div className='grid grid-cols-4 grid-rows-3 gap-3 h-[450px] w-full'>
             {/* Big Square Slice */}
             <div 
               className={`col-span-2 row-span-2 ${sliceClass}`}

@@ -1,8 +1,10 @@
 import React, { useLayoutEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { CheckCircle2, TrendingUp, ShieldCheck, Zap } from 'lucide-react';
+import { CheckCircle2,Target,MousePointer2, Search, TrendingUp, ShieldCheck, Zap } from 'lucide-react';
 import ClientSlider from './ClientSlider';
+import IndustryWeServe from './IndustryWeServe';
+
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -30,7 +32,9 @@ const Content = () => {
   }, []);
 
   return (
+    
     <section ref={containerRef} className="bg-[#050505] text-white py-16 md:py-24 overflow-hidden">
+      <ClientSlider/>
       <div className="max-w-7xl mx-auto px-6 space-y-20 md:space-y-32">
         
         {/* ROW 1: THE PROBLEM */}
@@ -38,7 +42,7 @@ const Content = () => {
           <div className="md:col-span-5">
             <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tighter leading-none">
               Tired of Traffic <br />
-              <span className="text-purple-500">That Doesn’t Convert?</span>
+              <span className="bg-gradient-to-r from-white via-purple-400 to-purple-500 bg-clip-text text-transparent">That Doesn’t Convert?</span>
             </h2>
           </div>
           <div className="md:col-span-7 text-gray-400 space-y-6 text-lg">
@@ -82,38 +86,56 @@ const Content = () => {
           </div>
         </div>
 
-        <ClientSlider/>
+
+       
+
+        <IndustryWeServe/>
 
        
        
 
         {/* ROW 3: USER INTENT */}
-        <div className="content-row grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16 items-start">
-          <div className="md:col-span-5">
-            <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tighter leading-none">
-              Built for Businesses Actively <br />
-              <span className="text-purple-500">Looking for Digital Marketing Help</span>
-            </h2>
+       <div className="content-row grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
+  {/* Left Side: Heading */}
+  <div className="lg:col-span-5">
+    <h2 className="text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-tighter leading-[0.9] text-white">
+      Built for Businesses Actively <br />
+      <span className="bg-gradient-to-r from-white via-purple-400 to-purple-500 bg-clip-text text-transparent">Looking for Digital Marketing Help</span>
+    </h2>
+  </div>
+
+  {/* Right Side: Content */}
+  <div className="lg:col-span-7 space-y-8">
+    <p className="text-gray-400 text-lg md:text-xl leading-relaxed">
+      People clicking Google Ads are not browsing. They’re searching with <span className="text-white font-bold underline decoration-[#8259DA] decoration-2 underline-offset-4">intent</span>. 
+      They’re ready to act — if the right signals are present. Our entire approach is built for high-intent visitors who:
+    </p>
+
+    {/* Upgraded Icon List (Grid layout for Tablet/Desktop) */}
+    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      {[
+        { text: "Need help marketing my business", icon: <Target size={20} /> },
+        { text: "Want to grow your business with digital marketing", icon: <TrendingUp size={20} /> },
+        { text: "Searching for strategies for small business growth", icon: <Search size={20} /> },
+        { text: "Want to drive customers to your website and convert them", icon: <MousePointer2 size={20} /> }
+      ].map((item, i) => (
+        <div 
+          key={i} 
+          className="flex items-center gap-4 p-4 bg-white/5 border border-white/5 rounded-2xl hover:border-[#8259DA]/50 transition-all group"
+        >
+          {/* Icon Container */}
+          <div className="flex-shrink-0 p-3 bg-[#8259DA]/10 rounded-xl text-[#8259DA] group-hover:bg-[#8259DA] group-hover:text-white transition-colors">
+            {item.icon}
           </div>
-          <div className="md:col-span-7 space-y-6">
-            <p className="text-gray-400 text-lg">People clicking Google Ads are not browsing. They’re searching with intent. They’re ready to act — if the right signals are present.
-Our entire approach, is built for high-intent visitors who:
-</p>
-            <ul className="space-y-4">
-              {[
-                "Need help marketing my business",
-                "Want to grow your business with digital marketing",
-                "Searching for strategies for small business growth",
-                "Want to drive customers to your website and convert them"
-              ].map((text, i) => (
-                <li key={i} className="flex items-center gap-4 text-white font-medium">
-                  <div className="w-1.5 h-1.5 bg-purple-500 rounded-full" />
-                  {text}
-                </li>
-              ))}
-            </ul>
-          </div>
+          {/* Text */}
+          <span className="text-white font-medium text-sm md:text-base leading-tight">
+            {item.text}
+          </span>
         </div>
+      ))}
+    </div>
+  </div>
+</div>
         <div className="content-row grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16 items-start">
           <div className="md:col-span-5">
             <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tighter leading-none">

@@ -55,17 +55,19 @@ const SeoPage = () => {
               drive organic traffic, and achieve sustainable growth.
             </p>
             <div className='flex gap-4 mt-2'>
-              <button className='bg-[#8b75f2] text-white px-8 py-3 rounded-lg font-medium hover:bg-[#604eac] transition shadow-[0_0_20px_rgba(99,69,237,0.4)]'>
-                Get Started
+              <button className="group relative px-8 py-3 md:px-12 md:py-4 bg-transparent border border-white/20 rounded-full overflow-hidden transition-all active:scale-95">
+                <span className="relative z-10 text-white font-bold text-sm md:text-base transition-colors group-hover:text-black">Get Started</span>
+                <div className="absolute inset-0 bg-white translate-y-[101%] group-hover:translate-y-0 transition-transform duration-300"></div>
               </button>
-              <button className='border border-[#6345ed]/40 px-8 py-3 rounded-lg font-medium hover:bg-[#6345ed]/10 transition'>
-                View Case Studies
+              <button className="group relative px-8 py-3 md:px-12 md:py-4 bg-transparent border border-white/20 rounded-full overflow-hidden transition-all active:scale-95">
+                <span className="relative z-10 text-white font-bold text-sm md:text-base transition-colors group-hover:text-black">View Case Studies</span>
+                <div className="absolute inset-0 bg-white translate-y-[101%] group-hover:translate-y-0 transition-transform duration-300"></div>
               </button>
             </div>
           </div>
 
           {/* Right Side: Sliced Bento Grid */}
-          <div className='grid grid-cols-4 grid-rows-3 gap-3 h-[500px] w-full'>
+          <div className='grid grid-cols-4 grid-rows-3 gap-3 h-[450px] w-full'>
             {/* Big Square Slice */}
             <div 
               className={`col-span-2 row-span-2 ${sliceClass}`}

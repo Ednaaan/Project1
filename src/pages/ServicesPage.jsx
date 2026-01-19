@@ -94,16 +94,14 @@ const ServicesPage = () => {
                 <div className="mt-12 mb-12 border-l-2 border-purple-500 pl-6 flex justify-between items-end">
                     <div>
                       <h1 className="text-4xl md:text-6xl font-black tracking-tighter uppercase">
-                          Our <span className="text-purple-500">Expertise.</span>
+                          Our <span className="bg-gradient-to-r from-white via-purple-400 to-purple-500 bg-clip-text text-transparent">Expertise.</span>
                       </h1>
                     </div>
                     
-                    <button 
-                      onClick={() => openForm()}
-                      className="hidden md:block text-xs font-bold uppercase tracking-widest border border-white/10 px-6 py-3 rounded-full hover:bg-white hover:text-black transition-all"
-                    >
-                      General Enquiry
-                    </button>
+                    <button onClick={() => openForm()} className="group relative px-8 py-3 md:px-12 md:py-4 bg-transparent border border-white/20 rounded-full overflow-hidden transition-all active:scale-95">
+                <span className="relative z-10 text-white font-bold text-sm md:text-base transition-colors group-hover:text-black">Consult Today</span>
+                <div className="absolute inset-0 bg-white translate-y-[101%] group-hover:translate-y-0 transition-transform duration-300"></div>
+              </button>
                 </div>
 
                 <div className="grid-container grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">

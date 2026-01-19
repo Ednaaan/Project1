@@ -16,8 +16,8 @@ const Footer = () => {
 
         {/* BRAND */}
         <div className="md:col-span-1">
-          <h2 className="text-2xl font-bold mb-4 tracking-wide uppercase">
-            Website Design Land
+          <h2 className="text-2xl font-bold mb-4 tracking-wide uppercase bg-gradient-to-r from-white via-purple-400 to-purple-500 bg-clip-text text-transparent">
+            WebsiteDesignLand
           </h2>
           <p className="text-gray-400 text-sm leading-relaxed max-w-sm">
             We craft clean, modern and high-performing digital
