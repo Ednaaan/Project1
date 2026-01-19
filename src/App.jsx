@@ -16,12 +16,14 @@ import DigitalMarketingPage from "./pages/DigitalMarketingPage";
 import ContentWritingPage from "./pages/ContentWritingPage";
 import PaidAdsPage from "./pages/PaidAdsPage";
 import FloatingDock from "./Components/FloatingDock";
+import ScrollToTop from "./Components/ScrollToTop";
 
 
 
 const App = () => {
   return (
     <BrowserRouter>
+    <ScrollToTop/>
     
       <CustomCursor />
       <Navbar />

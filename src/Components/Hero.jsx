@@ -54,7 +54,6 @@ const Hero = () => {
         backgroundPosition: "center",
       }}
     >
-      {/* 1. Main Content Wrapper */}
       <div className="max-w-7xl mx-auto px-6 w-full flex-grow flex items-center">
         <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-10 md:gap-12 lg:gap-16 items-center w-full">
           
@@ -68,7 +67,9 @@ const Hero = () => {
             <p className="mt-2 md:mt-3 text-gray-400 text-sm md:text-base lg:text-lg max-w-xl mx-auto lg:mx-0">
               Websites, ads, and growth AI powered systems that help businesses turn traffic into paying customers.
             </p>
-            <div onClick={() => document.getElementById("Form")?.scrollIntoView({ behavior: "smooth" })} className="mt-8 md:mt-10 md:flex md:justify-center lg:justify-start">
+
+            {/* Hidden on mobile/tablet (hidden), Visible on desktop (lg:flex) */}
+            <div onClick={() => document.getElementById("Form")?.scrollIntoView({ behavior: "smooth" })} className="mt-8 md:mt-10 hidden lg:flex lg:justify-start">
               <button className="group relative px-8 py-3 md:px-12 md:py-4 bg-transparent border border-white/20 rounded-full overflow-hidden transition-all active:scale-95">
                 <span className="relative z-10 text-white font-bold text-sm md:text-base transition-colors group-hover:text-black">Get In Touch</span>
                 <div className="absolute inset-0 bg-white translate-y-[101%] group-hover:translate-y-0 transition-transform duration-300"></div>
@@ -118,7 +119,6 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* 2. Sliding Marquee - Moved OUTSIDE the container to be 100% Width */}
       <div className="w-full bg-purple-600/10 border-b border-t border-white/5 py-4 overflow-hidden mt-8 md:mt-12">
         <div className="animate-marquee flex gap-12 items-center">
           <div className="flex gap-12 items-center px-4 shrink-0">
@@ -128,7 +128,6 @@ const Hero = () => {
             <span className="text-white/20">|</span>
             <span className="text-xl md:text-3xl font-bold uppercase tracking-[0.2em] bg-gradient-to-r from-white via-white to-purple-500 bg-clip-text text-transparent">4.9/5★ Rated on Google</span>
           </div>
-          {/* Duplicate set for seamless scrolling */}
           <div className="flex gap-12 items-center px-4 shrink-0">
             <span className="text-xl md:text-3xl font-bold uppercase tracking-[0.2em] bg-gradient-to-r from-white via-white to-purple-500 bg-clip-text text-transparent">10+ years of Experience</span>
             <span className="text-white/20">|</span>
