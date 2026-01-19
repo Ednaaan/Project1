@@ -29,7 +29,7 @@ const FloatingDock = () => {
 
         {/* Call */}
         <a 
-          href="tel:+yourphonenumber" 
+          href="tel:+919007186956" 
           className="p-2 text-white/70 hover:text-white hover:bg-white/10 rounded-full transition-all"
           title="Call Us"
         >
