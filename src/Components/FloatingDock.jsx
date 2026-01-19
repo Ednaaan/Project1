@@ -18,7 +18,7 @@ const FloatingDock = () => {
 
         {/* WhatsApp */}
         <a 
-          href="https://wa.me/9007186956" 
+          href="https://wa.me/+919007186956" 
           target="_blank" 
           rel="noopener noreferrer"
           className="p-2 text-white/70 hover:text-white hover:bg-white/10 rounded-full transition-all"
