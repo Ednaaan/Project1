@@ -2,7 +2,7 @@ import React, { useLayoutEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Link } from "react-router-dom";
-import logo from "../assets/logo.png";
+import logo from "../assets/WDL Logo.webp";
 
 gsap.registerPlugin(ScrollTrigger);
 

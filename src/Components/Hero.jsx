@@ -17,9 +17,9 @@ const Hero = () => {
     // Fix marquee speed for mobile
     const handleResize = () => {
       if (window.innerWidth < 768) {
-        setMarqueeSpeed("15s"); // Faster for mobile (shorter duration)
+        setMarqueeSpeed("5s"); // Faster for mobile (shorter duration)
       } else {
-        setMarqueeSpeed("30s"); // Normal for desktop
+        setMarqueeSpeed("20s"); // Normal for desktop
       }
     };
 
