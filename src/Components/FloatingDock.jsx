@@ -1,5 +1,6 @@
 import React from 'react';
-import { Mail, MessageCircle, Phone, Send,} from 'lucide-react';
+import { Mail,  Phone, Send,} from 'lucide-react';
+import { FaWhatsapp } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
 const FloatingDock = () => {
@@ -24,7 +25,7 @@ const FloatingDock = () => {
           className="p-2 text-white/70 hover:text-white hover:bg-white/10 rounded-full transition-all"
           title="WhatsApp"
         >
-          <MessageCircle size={22} />
+          <FaWhatsapp size={22} />
         </a>
 
         {/* Call */}

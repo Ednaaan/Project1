@@ -5,6 +5,7 @@ import backgroundImage from "../assets/backgroundImage2.png";
 
 const Hero = () => {
   const [scrolled, setScrolled] = useState(false);
+  const [marqueeSpeed, setMarqueeSpeed] = useState("30s"); // Default speed
   const heroRef = useRef(null);
   const form = useRef(); 
 
@@ -12,8 +13,24 @@ const Hero = () => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 80);
     };
+
+    // Fix marquee speed for mobile
+    const handleResize = () => {
+      if (window.innerWidth < 768) {
+        setMarqueeSpeed("15s"); // Faster for mobile (shorter duration)
+      } else {
+        setMarqueeSpeed("30s"); // Normal for desktop
+      }
+    };
+
+    handleResize(); // Run on mount
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener("resize", handleResize);
+    
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleResize);
+    };
   }, []);
 
   const sendEmail = (e) => {
@@ -68,7 +85,6 @@ const Hero = () => {
               Websites, ads, and growth AI powered systems that help businesses turn traffic into paying customers.
             </p>
 
-            {/* Hidden on mobile/tablet (hidden), Visible on desktop (lg:flex) */}
             <div onClick={() => document.getElementById("Form")?.scrollIntoView({ behavior: "smooth" })} className="mt-8 md:mt-10 hidden lg:flex lg:justify-start">
               <button className="group relative px-8 py-3 md:px-12 md:py-4 bg-transparent border border-white/20 rounded-full overflow-hidden transition-all active:scale-95">
                 <span className="relative z-10 text-white font-bold text-sm md:text-base transition-colors group-hover:text-black">Get In Touch</span>
@@ -120,7 +136,11 @@ const Hero = () => {
       </div>
 
       <div className="w-full bg-purple-600/10 border-b border-t border-white/5 py-4 overflow-hidden mt-8 md:mt-12">
-        <div className="animate-marquee flex gap-12 items-center">
+        {/* Dynamic speed applied here */}
+        <div 
+          className="animate-marquee flex gap-12 items-center" 
+          style={{ animationDuration: marqueeSpeed }}
+        >
           <div className="flex gap-12 items-center px-4 shrink-0">
             <span className="text-xl md:text-3xl font-bold uppercase tracking-[0.2em] bg-gradient-to-r from-white via-white to-purple-500 bg-clip-text text-transparent">10+ years of Experience</span>
             <span className="text-white/20">|</span>
