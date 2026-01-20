@@ -1,7 +1,8 @@
 import React, { useLayoutEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-
+// import p1 from "../assets/named.jpg"
+import { Phone, Mail } from "lucide-react";
 gsap.registerPlugin(ScrollTrigger);
 
 const services = [
@@ -67,7 +68,33 @@ const Services = () => {
           <p className="mt-4 md:mt-6 text-gray-400 max-w-sm">
             A focused set of design and development services built to
             create modern, scalable and high-performing digital experiences.
+            
           </p>
+          {/* <img src={p1} alt="service-img" className="mt-6 rounded-xl border border-white/10 h-[350px]" /> */}
+           <div className="mt-8 flex gap-6 group">
+              <div className="w-12 h-12 bg-purple-600/10 border border-purple-500/20 rounded-xl flex items-center justify-center shrink-0 group-hover:bg-purple-600/20 transition-colors">
+                <Phone className="text-purple-500" />
+              </div>
+              <div>
+                <h3 className="text-sm uppercase tracking-widest text-gray-500 font-bold mb-1">Speak Directly to Our Experts</h3>
+                <p className="text-xl font-medium hover:text-purple-400 transition-colors">
+                  <a href="tel:9007186956">+91 9007186956</a>
+                </p>
+              </div>
+            </div>
+
+            {/* Email */}
+            <div className="mt-8 flex gap-6 group">
+              <div className="w-12 h-12 bg-purple-600/10 border border-purple-500/20 rounded-xl flex items-center justify-center shrink-0 group-hover:bg-purple-600/20 transition-colors">
+                <Mail className="text-purple-500" />
+              </div>
+              <div>
+                <h3 className="text-sm uppercase tracking-widest text-gray-500 font-bold mb-1">Email Us</h3>
+                <p className="text-xl font-medium hover:text-purple-400 transition-colors">
+                  <a href="mailto:info@websitedesignland">info@websitedesignland</a>
+                </p>
+              </div>
+            </div>
         </div>
 
        

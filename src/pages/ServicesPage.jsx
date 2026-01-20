@@ -98,7 +98,7 @@ const ServicesPage = () => {
                       </h1>
                     </div>
                     
-                    <button onClick={() => openForm()} className="group relative px-8 py-3 md:px-12 md:py-4 bg-transparent border border-white/20 rounded-full overflow-hidden transition-all active:scale-95">
+                    <button onClick={() => openForm()} className="group relative px-8 py-3 md:px-12 md:py-4 bg-transparent border hidden md:block border-white/20 rounded-full overflow-hidden transition-all active:scale-95">
                 <span className="relative z-10 text-white font-bold text-sm md:text-base transition-colors group-hover:text-black">Consult Today</span>
                 <div className="absolute inset-0 bg-white translate-y-[101%] group-hover:translate-y-0 transition-transform duration-300"></div>
               </button>

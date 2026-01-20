@@ -1,9 +1,9 @@
 import React from 'react'
-import project1 from '../assets/project1.webp'
-import project2 from '../assets/project2.webp'
-import project3 from '../assets/project3.webp'
-import project4 from '../assets/project4.webp'
-import project5 from '../assets/project5.webp'
+import project1 from '../assets/ProjectCards/1.webp'
+import project2 from '../assets/ProjectCards/2.webp'
+import project3 from '../assets/ProjectCards/4.webp'
+import project4 from '../assets/ProjectCards/14.webp'
+import project5 from '../assets/ProjectCards/15.webp'
 
 const RecentWork = () => {
   const projects = [
@@ -18,7 +18,7 @@ const RecentWork = () => {
     <div className='bg-black py-12 md:py-24 px-4 overflow-hidden'>
       <div className='max-w-7xl mx-auto'>
         <div className='flex flex-col items-center justify-center text-center  mb-16 px-4'>
-            <h1 className='text-3xl md:text-5xl bg-gradient-to-r from-white via-purple-400 to-purple-600 bg-clip-text text-transparent font-bold leading-tight'>
+            <h1 className='text-3xl md:text-5xl bg-gradient-to-r from-white via-purple-400 to-purple-500 bg-clip-text text-transparent font-bold leading-tight'>
                 Our Recent Works
             </h1>
             <p className='text-gray-400 max-w-sm text-sm md:text-base'>
@@ -26,8 +26,7 @@ const RecentWork = () => {
             </p>
         </div>
 
-        {/* Responsive Container */}
-        {/* Mobile: Vertical Stack (Flex-Col) | Desktop: Horizontal Accordion (Flex-Row) */}
+        
         <div className='flex flex-col md:flex-row w-full h-auto md:h-[550px] gap-4 md:gap-3'>
           {projects.map((p) => (
             <div 
