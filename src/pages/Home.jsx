@@ -7,6 +7,7 @@ import RecentWork from '../Components/RecentWork'
 import Content from '../Components/Content'
 import ProcessSteps from '../Components/ProcessSteps'
 import FAQ from '../Components/FAQ'
+import TechSection from '../Components/TechSection'
 
 
 
@@ -20,6 +21,7 @@ const Home = () => {
     <RecentWork/>
     <Content/>
     <ProcessSteps/>
+    <TechSection/>
     
     <FAQ/>
   
