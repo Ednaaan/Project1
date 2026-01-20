@@ -4,6 +4,7 @@ import ReviewSlider from "../Components/ReviewSlider";
 import ClientSlider from "../Components/ClientSlider";
 import ProcessSteps from "../Components/ProcessSteps";
 import bentoImg from '../assets/seoImage.jpg'; 
+import { Link } from 'react-router-dom';
 
 const SlicedBento = ({ sliceClass, sliceStyle }) => (
   <div className='grid grid-cols-4 grid-rows-3 gap-2 md:gap-3 h-[300px] sm:h-[400px] lg:h-[450px] w-full'>
@@ -26,12 +27,12 @@ const SectionLayout = ({ title, children, reverse = false, sliceClass, sliceStyl
         <div className="text-gray-400 text-base md:text-lg space-y-4 md:space-y-6 mb-8 md:mb-10 leading-relaxed">
           {children}
         </div>
-        <a 
-          href="/contact" 
+        <Link
+          to="/contact" 
           className="inline-block w-full sm:w-auto px-10 py-4 bg-transparent border border-white/20 rounded-full font-bold text-white text-center hover:bg-white hover:text-black transition-all active:scale-95"
         >
           Book Free Strategy Call Today
-        </a>
+        </Link>
       </div>
       <div className="w-full">
         <SlicedBento sliceClass={sliceClass} sliceStyle={sliceStyle} />
@@ -70,15 +71,15 @@ const AboutPage = () => {
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6 mb-16 md:mb-20">
             {/* Strategy Call Link */}
-            <a href="/contact" className="group relative px-8 py-3 md:px-12 md:py-4 bg-transparent border border-white/20 rounded-full overflow-hidden transition-all active:scale-95 inline-flex items-center justify-center">
+            <Link to="/contact" className="group relative px-8 py-3 md:px-12 md:py-4 bg-transparent border border-white/20 rounded-full overflow-hidden transition-all active:scale-95 inline-flex items-center justify-center">
                 <span className="relative z-20 text-white font-bold text-sm md:text-base transition-colors group-hover:text-black pointer-events-none">Book Free Strategy Call</span>
                 <div className="absolute inset-0 z-10 bg-white translate-y-[101%] group-hover:translate-y-0 transition-transform duration-300"></div>
-            </a>
+            </Link>
             {/* Portfolio Link */}
-            <a href="/work" className="group relative px-8 py-3 md:px-12 md:py-4 bg-transparent border border-white/20 rounded-full overflow-hidden transition-all active:scale-95 inline-flex items-center justify-center">
+            <Link to="/work" className="group relative px-8 py-3 md:px-12 md:py-4 bg-transparent border border-white/20 rounded-full overflow-hidden transition-all active:scale-95 inline-flex items-center justify-center">
                 <span className="relative z-20 text-white font-bold text-sm md:text-base transition-colors group-hover:text-black pointer-events-none">See Our Portfolio</span>
                 <div className="absolute inset-0 z-10 bg-white translate-y-[101%] group-hover:translate-y-0 transition-transform duration-300"></div>
-            </a>
+            </Link>
           </div>
         </div>
       </section>
@@ -163,10 +164,10 @@ const AboutPage = () => {
         <p className="text-gray-500 px-4 py-0 mb-8 max-w-2xl mx-auto">
           If you’re looking for digital marketing services that feel clear, honest, and results-focused, Website Design Land is here to help. We work with businesses that want to build trust, generate enquiries, and grow online in a sustainable way.
         </p>
-        <a href="/contact" className="group relative inline-flex items-center justify-center px-8 py-3 md:px-12 md:py-4 bg-transparent border border-white/20 rounded-full overflow-hidden transition-all active:scale-95">
+        <Link to="/contact" className="group relative inline-flex items-center justify-center px-8 py-3 md:px-12 md:py-4 bg-transparent border border-white/20 rounded-full overflow-hidden transition-all active:scale-95">
           <span className="relative z-20 text-white font-bold text-sm md:text-base transition-colors group-hover:text-black pointer-events-none">Book Free Strategy Call</span>
           <div className="absolute inset-0 z-10 bg-white translate-y-[101%] group-hover:translate-y-0 transition-transform duration-300"></div>
-        </a>
+        </Link>
       </section>
 
     </div>
