@@ -1,5 +1,5 @@
 import React from "react";
-import { FiExternalLink } from "react-icons/fi"; // Better icon for live links
+import { FiExternalLink } from "react-icons/fi";  
 
 const ProjectCard = ({ image, title, category, link }) => {
   return (
