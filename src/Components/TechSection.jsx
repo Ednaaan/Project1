@@ -102,7 +102,7 @@ const TechOrbit = () => {
         </div>
 
         
-        <div className="absolute w-[300px] h-[300px] md:w-[480px] md:h-[480px] border border-white/5 rounded-full pointer-events-none" />
+        <div className="absolute w-[300px] h-[300px] md:w-[500px] md:h-[500px] border border-white/5 rounded-full pointer-events-none" />
         <div className="absolute w-[380px] h-[380px] md:w-[580px] md:h-[580px] border border-white/5 rounded-full pointer-events-none opacity-30" />
       </div>
     </section>
