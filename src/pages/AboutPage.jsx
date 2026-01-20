@@ -5,9 +5,7 @@ import ClientSlider from "../Components/ClientSlider";
 import ProcessSteps from "../Components/ProcessSteps";
 import bentoImg from '../assets/seoImage.jpg'; 
 
-
 const SlicedBento = ({ sliceClass, sliceStyle }) => (
- 
   <div className='grid grid-cols-4 grid-rows-3 gap-2 md:gap-3 h-[300px] sm:h-[400px] lg:h-[450px] w-full'>
     <div className={`col-span-2 row-span-2 ${sliceClass}`} style={sliceStyle} />
     <div className={`col-span-2 row-span-1 ${sliceClass}`} style={sliceStyle} />
@@ -18,12 +16,9 @@ const SlicedBento = ({ sliceClass, sliceStyle }) => (
   </div>
 );
 
-
 const SectionLayout = ({ title, children, reverse = false, sliceClass, sliceStyle }) => (
-  
   <section className="py-16 md:py-24 px-6 md:px-12 lg:px-28 border-b border-white/5 bg-black">
     <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-    
       <div className={`${reverse ? "lg:order-last" : ""} text-center lg:text-left`}>
         <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 md:mb-8 leading-tight text-white tracking-tight">
           {title}
@@ -31,11 +26,12 @@ const SectionLayout = ({ title, children, reverse = false, sliceClass, sliceStyl
         <div className="text-gray-400 text-base md:text-lg space-y-4 md:space-y-6 mb-8 md:mb-10 leading-relaxed">
           {children}
         </div>
-        <button  onClick={()=> {
-              window.location.href = '/contact';
-            }} className="w-full sm:w-auto px-10 py-4 bg-transparent border border-white/20 rounded-full font-bold hover:bg-white hover:text-black transition-colors">
+        <a 
+          href="/contact" 
+          className="inline-block w-full sm:w-auto px-10 py-4 bg-transparent border border-white/20 rounded-full font-bold text-white text-center hover:bg-white hover:text-black transition-all active:scale-95"
+        >
           Book Free Strategy Call Today
-        </button>
+        </a>
       </div>
       <div className="w-full">
         <SlicedBento sliceClass={sliceClass} sliceStyle={sliceStyle} />
@@ -45,7 +41,6 @@ const SectionLayout = ({ title, children, reverse = false, sliceClass, sliceStyl
 );
 
 const AboutPage = () => {
-  
   const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
 
   const sliceStyle = {
@@ -61,7 +56,7 @@ const AboutPage = () => {
   return (
     <div className="bg-black text-white overflow-x-hidden font-sans">
       
-      
+      {/* --- HERO SECTION --- */}
       <section className="pt-32 pb-20 md:pt-44 md:pb-28 px-6 bg-gradient-to-br from-black via-zinc-900 to-black">
         <div className="max-w-7xl mx-auto text-center">
           <h1 className="text-4xl md:text-6xl lg:text-8xl font-black mb-6 bg-gradient-to-r from-white via-purple-300 to-[#8259DA] bg-clip-text text-transparent tracking-tighter">
@@ -74,23 +69,21 @@ const AboutPage = () => {
             Build your brand value with high-converting websites and AI-driven systems designed for clarity and enquiries.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6 mb-16 md:mb-20">
-            <button  onClick={()=> {
-              window.location.href = '/contact';
-            }} className="group relative px-8 py-3 md:px-12 md:py-4 bg-transparent border border-white/20 rounded-full overflow-hidden transition-all active:scale-95">
-                <span className="relative z-10 text-white font-bold text-sm md:text-base transition-colors group-hover:text-black">Book Free Strategy Call</span>
-                <div className="absolute inset-0 bg-white translate-y-[101%] group-hover:translate-y-0 transition-transform duration-300"></div>
-              </button>
-            <button onClick={()=> {
-              window.location.href = '/work';
-            }} className="group relative px-8 py-3 md:px-12 md:py-4 bg-transparent border border-white/20 rounded-full overflow-hidden transition-all active:scale-95">
-                <span className="relative z-10 text-white font-bold text-sm md:text-base transition-colors group-hover:text-black">See Our Portfolio</span>
-                <div className="absolute inset-0 bg-white translate-y-[101%] group-hover:translate-y-0 transition-transform duration-300"></div>
-              </button>
+            {/* Strategy Call Link */}
+            <a href="/contact" className="group relative px-8 py-3 md:px-12 md:py-4 bg-transparent border border-white/20 rounded-full overflow-hidden transition-all active:scale-95 inline-flex items-center justify-center">
+                <span className="relative z-20 text-white font-bold text-sm md:text-base transition-colors group-hover:text-black pointer-events-none">Book Free Strategy Call</span>
+                <div className="absolute inset-0 z-10 bg-white translate-y-[101%] group-hover:translate-y-0 transition-transform duration-300"></div>
+            </a>
+            {/* Portfolio Link */}
+            <a href="/work" className="group relative px-8 py-3 md:px-12 md:py-4 bg-transparent border border-white/20 rounded-full overflow-hidden transition-all active:scale-95 inline-flex items-center justify-center">
+                <span className="relative z-20 text-white font-bold text-sm md:text-base transition-colors group-hover:text-black pointer-events-none">See Our Portfolio</span>
+                <div className="absolute inset-0 z-10 bg-white translate-y-[101%] group-hover:translate-y-0 transition-transform duration-300"></div>
+            </a>
           </div>
         </div>
       </section>
 
-      
+      {/* --- MARQUEE --- */}
       <div className="w-full bg-purple-600/10 border-b border-t border-white/5 py-4 overflow-hidden mt-8 md:mt-12">
         <div className="animate-marquee flex gap-12 items-center">
           <div className="flex gap-12 items-center px-4 shrink-0">
@@ -100,7 +93,6 @@ const AboutPage = () => {
             <span className="text-white/20">|</span>
             <span className="text-xl md:text-3xl font-bold uppercase tracking-[0.2em] bg-gradient-to-r from-white via-white to-purple-500 bg-clip-text text-transparent">4.9/5★ Rated on Google</span>
           </div>
-          
           <div className="flex gap-12 items-center px-4 shrink-0">
             <span className="text-xl md:text-3xl font-bold uppercase tracking-[0.2em] bg-gradient-to-r from-white via-white to-purple-500 bg-clip-text text-transparent">10+ years of Experience</span>
             <span className="text-white/20">|</span>
@@ -111,23 +103,14 @@ const AboutPage = () => {
         </div>
       </div>
 
-     
+      {/* --- CONTENT SECTIONS --- */}
       <SectionLayout title="How Website Design Land Began" sliceClass={sliceClass} sliceStyle={sliceStyle}>
-        <p>Website Design Land was created after seeing a common problem across the digital marketing industry. Many businesses were investing time and money into marketing without truly understanding what they were getting in return. Traffic was increasing, but enquiries were not. Ads were running, but results felt unpredictable. Strategies sounded impressive but lacked clarity.
-We saw businesses asking the same questions again and again:
-
-
-</p>
-        <p> Why isn’t my website converting?
- Why am I getting clicks but no calls?
- Why does digital marketing feel so complicated?</p>
+        <p>Website Design Land was created after seeing a common problem across the digital marketing industry. Many businesses were investing time and money into marketing without truly understanding what they were getting in return. Traffic was increasing, but enquiries were not. Ads were running, but results felt unpredictable. Strategies sounded impressive but lacked clarity.</p>
+        <p>Why isn’t my website converting? Why am I getting clicks but no calls? Why does digital marketing feel so complicated?</p>
       </SectionLayout>
 
       <SectionLayout title="Our Belief: Digital Marketing Should Be Clear and Measurable" reverse sliceClass={sliceClass} sliceStyle={sliceStyle}>
-        <p>We believe digital marketing should never feel confusing. Business owners should understand what is happening, why it matters, and how it supports growth.
-That belief shapes everything we do. Every digital marketing strategy we create is built around clarity, relevance, and performance. We focus on outcomes that matter to businesses, not vanity metrics that look good on reports but don’t move the needle.
-Whether it’s SEO, paid advertising, or conversion optimisation, our role is to help businesses make informed decisions and see measurable progress.
-</p>
+        <p>We believe digital marketing should never feel confusing. Business owners should understand what is happening, why it matters, and how it supports growth. That belief shapes everything we do. Every digital marketing strategy we create is built around clarity, relevance, and performance. We focus on outcomes that matter to businesses, not vanity metrics that look good on reports but don’t move the needle.</p>
       </SectionLayout>
 
       {/* --- REVIEWS --- */}
@@ -145,19 +128,12 @@ Whether it’s SEO, paid advertising, or conversion optimisation, our role is to
       </section>
 
       <SectionLayout title="Who We Work With" sliceClass={sliceClass} sliceStyle={sliceStyle}>
-        <p>We work with businesses that want to grow, improve, and build something sustainable online. Many of our clients come to us because they feel stuck, uncertain, or frustrated with previous marketing efforts.
-Our clients typically want:
- More enquiries, not just more traffic
- Better use of their marketing budget
- Clear direction and honest advice
- A reliable digital marketing partner
-We support service-based businesses, local companies, and growing brands across the UK, USA, Canada & India who want digital marketing for their business that feels practical and purposeful.
-</p>
+        <p>We work with businesses that want to grow, improve, and build something sustainable online. Many of our clients come to us because they feel stuck, uncertain, or frustrated with previous marketing efforts. We support service-based businesses, local companies, and growing brands across the UK, USA, Canada & India who want digital marketing for their business that feels practical and purposeful.</p>
       </SectionLayout>
 
       <ClientSlider />
 
-      
+      {/* --- WHY CHOOSE US --- */}
       <section className="py-20 px-6 md:px-12 lg:px-28">
         <div className="max-w-7xl mx-auto text-center mb-12">
           <h6 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">Why Choose Website Design Land?</h6>
@@ -181,19 +157,16 @@ We support service-based businesses, local companies, and growing brands across 
 
       <ProcessSteps />
 
-      
+      {/* --- FINAL CTA --- */}
       <section className="py-28 px-6 text-center bg-zinc-950">
         <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-8 text-white">Let’s Build Something That Lasts</h2>
-        <p className="text-gray-500 px-4 py-0 mb-5">If you’re looking for digital marketing services that feel clear, honest, and results-focused, Website Design Land is here to help.
-We work with businesses that want more than surface-level marketing. Businesses that want to build trust, generate enquiries, and grow online in a sustainable way.
-When you’re ready to take the next step, we’re ready to guide you forward.
-</p>
-        <button  onClick={()=> {
-              window.location.href = '/contact';
-            }} className="group relative px-8 py-3 md:px-12 md:py-4 bg-transparent border border-white/20 rounded-full overflow-hidden transition-all active:scale-95">
-                <span className="relative z-10 text-white font-bold text-sm md:text-base transition-colors group-hover:text-black">Book Free Strategy Call</span>
-                <div className="absolute inset-0 bg-white translate-y-[101%] group-hover:translate-y-0 transition-transform duration-300"></div>
-              </button>
+        <p className="text-gray-500 px-4 py-0 mb-8 max-w-2xl mx-auto">
+          If you’re looking for digital marketing services that feel clear, honest, and results-focused, Website Design Land is here to help. We work with businesses that want to build trust, generate enquiries, and grow online in a sustainable way.
+        </p>
+        <a href="/contact" className="group relative inline-flex items-center justify-center px-8 py-3 md:px-12 md:py-4 bg-transparent border border-white/20 rounded-full overflow-hidden transition-all active:scale-95">
+          <span className="relative z-20 text-white font-bold text-sm md:text-base transition-colors group-hover:text-black pointer-events-none">Book Free Strategy Call</span>
+          <div className="absolute inset-0 z-10 bg-white translate-y-[101%] group-hover:translate-y-0 transition-transform duration-300"></div>
+        </a>
       </section>
 
     </div>
