@@ -31,7 +31,9 @@ const SectionLayout = ({ title, children, reverse = false, sliceClass, sliceStyl
         <div className="text-gray-400 text-base md:text-lg space-y-4 md:space-y-6 mb-8 md:mb-10 leading-relaxed">
           {children}
         </div>
-        <button className="w-full sm:w-auto px-10 py-4 bg-transparent border border-white/20 rounded-full font-bold hover:bg-white hover:text-black transition-colors">
+        <button  onClick={()=> {
+              window.location.href = '/contact';
+            }} className="w-full sm:w-auto px-10 py-4 bg-transparent border border-white/20 rounded-full font-bold hover:bg-white hover:text-black transition-colors">
           Book Free Strategy Call Today
         </button>
       </div>
@@ -72,11 +74,15 @@ const AboutPage = () => {
             Build your brand value with high-converting websites and AI-driven systems designed for clarity and enquiries.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6 mb-16 md:mb-20">
-            <button className="group relative px-8 py-3 md:px-12 md:py-4 bg-transparent border border-white/20 rounded-full overflow-hidden transition-all active:scale-95">
+            <button  onClick={()=> {
+              window.location.href = '/contact';
+            }} className="group relative px-8 py-3 md:px-12 md:py-4 bg-transparent border border-white/20 rounded-full overflow-hidden transition-all active:scale-95">
                 <span className="relative z-10 text-white font-bold text-sm md:text-base transition-colors group-hover:text-black">Book Free Strategy Call</span>
                 <div className="absolute inset-0 bg-white translate-y-[101%] group-hover:translate-y-0 transition-transform duration-300"></div>
               </button>
-            <button className="group relative px-8 py-3 md:px-12 md:py-4 bg-transparent border border-white/20 rounded-full overflow-hidden transition-all active:scale-95">
+            <button onClick={()=> {
+              window.location.href = '/work';
+            }} className="group relative px-8 py-3 md:px-12 md:py-4 bg-transparent border border-white/20 rounded-full overflow-hidden transition-all active:scale-95">
                 <span className="relative z-10 text-white font-bold text-sm md:text-base transition-colors group-hover:text-black">See Our Portfolio</span>
                 <div className="absolute inset-0 bg-white translate-y-[101%] group-hover:translate-y-0 transition-transform duration-300"></div>
               </button>
@@ -182,7 +188,9 @@ We support service-based businesses, local companies, and growing brands across 
 We work with businesses that want more than surface-level marketing. Businesses that want to build trust, generate enquiries, and grow online in a sustainable way.
 When you’re ready to take the next step, we’re ready to guide you forward.
 </p>
-        <button className="group relative px-8 py-3 md:px-12 md:py-4 bg-transparent border border-white/20 rounded-full overflow-hidden transition-all active:scale-95">
+        <button  onClick={()=> {
+              window.location.href = '/contact';
+            }} className="group relative px-8 py-3 md:px-12 md:py-4 bg-transparent border border-white/20 rounded-full overflow-hidden transition-all active:scale-95">
                 <span className="relative z-10 text-white font-bold text-sm md:text-base transition-colors group-hover:text-black">Book Free Strategy Call</span>
                 <div className="absolute inset-0 bg-white translate-y-[101%] group-hover:translate-y-0 transition-transform duration-300"></div>
               </button>

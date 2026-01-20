@@ -37,15 +37,16 @@ const ContactPage = () => {
 
   return (
     <section ref={containerRef} className="min-h-screen bg-black text-white pt-32 pb-20 px-6">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-7xl mx-auto ">
         
         
         <div className="mb-16 animate-up">
-          <h1 className="text-4xl md:text-6xl font-extrabold tracking-tighter mb-4">
-            LET'S BUILD  <span className="bg-gradient-to-r from-white via-purple-400 to-purple-600 bg-clip-text text-transparent">SOMETHING GREAT.</span>
+          <h1 className="text-4xl md:text-6xl font-extrabold tracking-tighter mb-4 uppercase">
+            Let’s Grow Your  <span className="bg-gradient-to-r from-white via-purple-400 to-purple-600 bg-clip-text text-transparent uppercase">Business Online.</span>
           </h1>
           <p className="text-gray-400 max-w-2xl text-lg">
-            Ready to scale your digital presence? Reach out and let's discuss how we can help you grow.
+           Getting in touch is simple—at Website Design Land, we listen first and guide you with clear, honest digital marketing advice to support your business growth.
+
           </p>
         </div>
 

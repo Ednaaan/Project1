@@ -1,8 +1,8 @@
-import React, { useLayoutEffect, useRef, useState } from "react";
+import React, { useLayoutEffect, useRef } from "react";
 import { gsap } from "gsap";
 import ProjectCard from "../Components/ProjectCard";
 
-// Assets Imports
+// Import images
 import p1 from "../assets/ProjectCards/1.webp";
 import p2 from "../assets/ProjectCards/2.webp";
 import p3 from "../assets/ProjectCards/3.webp";
@@ -24,25 +24,25 @@ import p18 from "../assets/ProjectCards/18.webp";
 import p19 from "../assets/ProjectCards/19.webp";
 
 const projects = [
-  { image: p1, title: "Travel Website", category: "website" },
-  { image: p2, title: "Construction & Renovation Service", category: "Construction & Renovation" },
-  { image: p3, title: "Other", category: "removal" },
-  { image: p4, title: "Cleaners Services", category: "Cleaners" },
-  { image: p5, title: "Removal Services", category: "removal" },
-  { image: p6, title: "Cleaners Services", category: "Cleaners" },
-  { image: p7, title: "Website Design", category: "website" },
-  { image: p8, title: "Renovation Services", category: "Construction & Renovation" },
-  { image: p9, title: "Removal Services", category: "removal" },
-  { image: p10, title: "Removal Services", category: "removal" },
-  { image: p11, title: "Construction & Renovation Service", category: "Construction & Renovation" },
-  { image: p12, title: "Removal Services", category: "removal" },
-  { image: p13, title: "Office Cleaning Services", category: "Cleaners" },
-  { image: p14, title: "Moving & Removal Services", category: "removal" },
-  { image: p15, title: "Startup Website", category: "website" },
-  { image: p16, title: "E-commerce Store", category: "ecommerce" },
-  { image: p17, title: "Construction Company Site", category: "Construction & Renovation" },
-  { image: p18, title: "Residential Cleaning Services", category: "Cleaners" },
-  { image: p19, title: "Furniture Removal Services", category: "removal" },
+  { image: p1, title: "Travel Website", category: "website", link: "https://andamanliveholidays.com/" },
+  { image: p2, title: "Construction & Renovation Service", category: "Construction & Renovation", link: "https://bmebuilderslondon.co.uk/" },
+  { image: p3, title: "Charity Website", category: "charity", link: "https://buildyourakhirah.com/" },
+  { image: p4, title: "Cleaners Services", category: "Cleaners", link: "https://cgbathroomslimited.co.uk/" },
+  { image: p5, title: "Removal Services", category: "removal", link: "https://dotcourierandremovals.co.uk/" },
+  { image: p6, title: "Cleaners Services", category: "Cleaners", link: "https://cleanerchoicecleaning.com/" },
+  { image: p7, title: "Website Design", category: "website", link: "https://itaway.co.uk/" },
+  { image: p8, title: "Cleaning Services", category: "Cleaners", link: "https://glennbathroomfitters.co.uk/" },
+  { image: p9, title: "Removal Services", category: "removal", link: "https://jamboremovals.co.uk/" },
+  { image: p10, title: "Removal Services", category: "removal", link: "https://ivanremovals.co.uk/" },
+  { image: p11, title: "Construction & Renovation Service", category: "Construction & Renovation", link: "https://perfectbuilder.uk/" },
+  { image: p12, title: "Removal Services", category: "removal", link: "https://www.mappy-movers.com/" },
+  { image: p13, title: "Surveyor", category: "surveyor", link: "https://quantitysurveyorsltd.co.uk" },
+  { image: p14, title: "Cash For Gold", category: "trade", link: "https://quickcashforgold.co.uk/" },
+  { image: p15, title: "Removal Service", category: "removal", link: "https://quickmanchestermovers.co.uk/" },
+  { image: p16, title: "Handyman", category: "handyman", link: "https://theitaliantasker.co.uk/" },
+  { image: p17, title: "Moving Services", category: "moving", link: "https://totaltransportteam.co.uk/" },
+  { image: p18, title: "Recycle", category: "recycle", link: "https://tmreuseleeds.co.uk/" },
+  
 ];
 
 const RecentWorkPage = () => {
@@ -52,10 +52,7 @@ const RecentWorkPage = () => {
     const ctx = gsap.context(() => {
       gsap.fromTo(
         ".project-item",
-        { 
-          y: 60, 
-          opacity: 0 
-        },
+        { y: 60, opacity: 0 },
         {
           y: 0,
           opacity: 1,
@@ -73,7 +70,6 @@ const RecentWorkPage = () => {
     <section className="bg-black text-white min-h-screen pt-36 pb-28 px-6">
       <div className="max-w-7xl mx-auto">
         
-        {/* Header Section */}
         <div className="text-center mb-20">
           <h1 className="text-4xl md:text-6xl font-extrabold mb-6 bg-gradient-to-r from-white via-purple-400 to-purple-600 bg-clip-text text-transparent">
             Our Recent Work
@@ -84,13 +80,6 @@ const RecentWorkPage = () => {
           </p>
         </div>
 
-        {/* Filter Section (Hidden as requested) */}
-        {/* <div className="flex gap-4 overflow-x-auto pb-4 mb-12 no-scrollbar">
-          ... filter buttons logic ...
-        </div> 
-        */}
-
-        {/* Projects Grid */}
         <div
           ref={gridRef}
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10"
@@ -101,12 +90,12 @@ const RecentWorkPage = () => {
                 image={project.image}
                 title={project.title}
                 category={project.category}
+                link={project.link} 
               />
             </div>
           ))}
         </div>
 
-        {/* Empty State */}
         {projects.length === 0 && (
           <div className="text-center py-20">
             <p className="text-gray-500 text-xl">No projects to display at the moment.</p>

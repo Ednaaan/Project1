@@ -121,7 +121,7 @@ const FAQ = () => {
         
         <div className="mt-16 text-center">
             <p className="text-gray-500 text-sm mb-6">Still have questions? We're here to help.</p>
-            <button className="px-8 py-3 rounded-full border border-white/20 hover:bg-white hover:text-black transition-all font-bold uppercase text-[10px] tracking-widest">
+            <button onClick={() => document.getElementById("Form")?.scrollIntoView({ behavior: "smooth" })} className="px-8 py-3 rounded-full border border-white/20 hover:bg-white hover:text-black transition-all font-bold uppercase text-[10px] tracking-widest">
                 Contact Support
             </button>
         </div>
