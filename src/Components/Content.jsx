@@ -180,9 +180,9 @@ This includes:
           </div>
           <div className="md:col-span-7">
             <p className="text-gray-400 text-lg mb-10">When visitors compare options, trust is the decider. We design marketing for local businesses that reflects how people actually choose service providers.</p>
-            
-            
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 mb-12 border-y border-white/10 py-8">
+
+
+            <div className="grid grid-cols-3 gap-4 sm:gap-8 mb-12 border-y border-white/10 py-8">
               <div>
                 <p className="text-3xl font-black">10+</p>
                 <p className="text-[10px] text-purple-500 uppercase font-bold tracking-widest">Years Experience</p>
@@ -192,7 +192,7 @@ This includes:
                 <p className="text-[10px] text-purple-500 uppercase font-bold tracking-widest">Client Retention</p>
               </div>
               <div>
-                <p className="text-3xl font-black">4.9/5★</p>
+                <p className="text-3xl font-black ">4.9/5★</p>
                 <p className="text-[10px] text-purple-500 uppercase font-bold tracking-widest">Google Rated</p>
               </div>
             </div>

@@ -1,91 +1,124 @@
-import React, { useLayoutEffect, useRef } from 'react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import teamImg from '../assets/unnamed.jpg';
+import React, { useLayoutEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { FaLinkedin, FaTwitter } from "react-icons/fa";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const Teams = () => {
-    const mainRef = useRef(null); // Ref for the entire section
+const team = [
+  {
+    name: "Alex Rivera",
+    role: "Full-Stack Developer",
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=500&auto=format&fit=crop",
+  },
+  {
+    name: "Sarah Chen",
+    role: "UI/UX Designer",
+    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=500&auto=format&fit=crop",
+  },
+  {
+    name: "Marcus Thorne",
+    role: "SEO Specialist",
+    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=500&auto=format&fit=crop",
+  },
+];
 
-    const teams = [
-        { id: 1, name: 'Shayan Tanveer', role: "Developer", image: teamImg, description: 'Expert in React and GSAP animations.' },
-        { id: 2, name: 'Faizan Aziz', role: 'Developer', image: teamImg, description: 'Backend architect and systems specialist.' },
-        { id: 3, name: 'Ansar Ahmed', role: 'Developer', image: teamImg, description: 'UI/UX enthusiast and frontend engineer.' },
-        { id: 4, name: 'Md Adnan Sohail', role: 'Developer', image: teamImg, description: 'Full-stack wizard and cloud expert.' }
-    ];
+const Team = () => {
+  const componentRef = useRef(null);
 
-    useLayoutEffect(() => {
-        // 1. Create a GSAP Context
-        let ctx = gsap.context(() => {
-            
-            // Animation for the cards
-            gsap.from(".team-card", {
-                y: 60,
-                opacity: 0,
-                duration: 1,
-                stagger: 0.15,
-                ease: "power4.out",
-                scrollTrigger: {
-                    trigger: ".team-grid",
-                    start: "top 80%",
-                    toggleActions: "play none none reverse", // Ensures it resets if you scroll back up
-                }
-            });
+  useLayoutEffect(() => {
+    // Only run animation if screen width is 1024px or larger
+    if (window.innerWidth < 1024) return;
 
-            // Subtle parallax for images
-            gsap.utils.toArray('.member-img').forEach(img => {
-                gsap.to(img, {
-                    y: -20,
-                    scrollTrigger: {
-                        trigger: img,
-                        scrub: true
-                    }
-                });
-            });
+    let ctx = gsap.context(() => {
+      const cards = gsap.utils.toArray(".team-card");
+      
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: componentRef.current,
+          start: "top top",
+          end: "+=1200",
+          scrub: 1,
+          pin: true,
+          anticipatePin: 1,
+        },
+      });
 
-        }, mainRef); // <- Scope all selectors to this ref
+      tl.fromTo(
+        cards,
+        {
+          x: 0,
+          y: 0,
+          rotation: (i) => i * 5 - 5,
+          opacity: 0.8,
+        },
+        {
+          x: (i) => (i - 1) * 380,
+          y: 0,
+          rotation: 0,
+          opacity: 1,
+          ease: "power2.out",
+        }
+      );
+    }, componentRef);
 
-        // 2. Cleanup: This kills all animations and triggers automatically
-        return () => ctx.revert(); 
-    }, []);
+    return () => ctx.revert();
+  }, []);
 
-    return (
-        <div ref={mainRef} className='bg-[#050505] py-24 text-white overflow-hidden'>
-            <div className='max-w-7xl mx-auto px-6'>
-                <div className='mb-20'>
-                    <h2 className='text-sm uppercase tracking-[0.3em] text-purple-500 font-bold mb-4'>Our Experts</h2>
-                    <h1 className='text-5xl md:text-7xl font-bold tracking-tighter'>Meet the <span className='italic font-light text-gray-500'>Team.</span></h1>
-                </div>
-
-                <div className='team-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6'>
-                    {teams.map((member) => (
-                        <div key={member.id} className='team-card group relative overflow-hidden rounded-2xl bg-[#111] border border-white/5 hover:border-purple-500/50 transition-colors duration-500'>
-                            
-                            <div className='h-80 overflow-hidden relative group'> 
-                                {/* Added 'group' to the parent if not already there to trigger child hover */}
-                                <img 
-                                    src={member.image} 
-                                    alt={member.name} 
-                                    className='member-img w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 ease-in-out transform group-hover:scale-110' 
-                                />
-                                <div className='absolute inset-0 bg-gradient-to-t from-[#111] via-transparent to-transparent pointer-events-none' />
-                            </div>
-
-                            {/* Content */}
-                            <div className='p-6 relative -mt-16 bg-[#111]/90 backdrop-blur-md mx-4 mb-4 rounded-xl border border-white/5'>
-                                <h3 className='text-xl font-bold'>{member.name}</h3>
-                                <p className='text-purple-400 text-xs font-mono mb-3 uppercase tracking-widest'>{member.role}</p>
-                                <p className='text-gray-400 text-sm leading-relaxed opacity-0 group-hover:opacity-100 h-0 group-hover:h-auto transition-all duration-500 overflow-hidden'>
-                                    {member.description}
-                                </p>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-            </div>
+  return (
+    <section 
+      ref={componentRef} 
+      className="relative bg-black text-white overflow-hidden"
+    >
+      <div className="max-w-7xl mx-auto min-h-screen flex flex-col items-center justify-center py-20 px-6">
+        <div className="text-center mb-16 md:mb-32">
+          <h2 className="text-4xl md:text-7xl font-black uppercase tracking-tighter mb-4">
+            Meet The <span className="bg-gradient-to-r from-purple-400 to-purple-600 bg-clip-text text-transparent">Squad</span>
+          </h2>
+          <p className="hidden md:block text-gray-500 max-w-lg mx-auto text-sm md:text-base">
+            Keep scrolling to see the team reveal.
+          </p>
         </div>
-    );
+
+        {/* On Mobile: Use a standard flex/grid layout (relative)
+            On Desktop: Use absolute positioning for the GSAP stack effect 
+        */}
+        <div className="relative w-full flex flex-col md:flex-row justify-center items-center gap-8 md:gap-0 h-auto md:h-[500px]">
+          {team.map((member, index) => (
+            <div
+              key={index}
+              className="team-card relative md:absolute w-full max-w-[320px] md:w-[340px] rounded-3xl bg-zinc-900 border border-white/10 p-4 shadow-2xl transition-colors hover:border-purple-500/50"
+              style={{ zIndex: team.length - index }}
+            >
+              <div className="relative h-72 md:h-80 w-full overflow-hidden rounded-2xl mb-6">
+                <img 
+                  src={member.image} 
+                  alt={member.name} 
+                  className="w-full h-full object-cover grayscale"
+                />
+              </div>
+
+              <div className="px-2 pb-2">
+                <h3 className="text-xl md:text-2xl font-bold">{member.name}</h3>
+                <p className="text-purple-500 text-xs font-bold uppercase tracking-widest mt-1">
+                  {member.role}
+                </p>
+                
+                <div className="flex gap-4 mt-5">
+                  <a href="#" className="text-white/30 hover:text-purple-400 transition-colors">
+                    <FaLinkedin size={18} />
+                  </a>
+                  <a href="#" className="text-white/30 hover:text-purple-400 transition-colors">
+                    <FaTwitter size={18} />
+                  </a>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
 };
 
-export default Teams;
+export default Team;

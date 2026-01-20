@@ -8,6 +8,7 @@ import Content from '../Components/Content'
 import ProcessSteps from '../Components/ProcessSteps'
 import FAQ from '../Components/FAQ'
 import TechSection from '../Components/TechSection'
+import Team from '../Components/Teams'
 
 
 
@@ -22,6 +23,7 @@ const Home = () => {
     <Content/>
     <ProcessSteps/>
     <TechSection/>
+    <Team/>
     
     <FAQ/>
   
