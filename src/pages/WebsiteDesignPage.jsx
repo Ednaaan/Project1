@@ -1,133 +1,131 @@
 import React from 'react';
-import { Layout, Palette, MousePointer2, Smartphone, CheckCircle2 } from 'lucide-react';
-// import designVideo from '../assets/Animation_Video_Generation_Complete.mp4';
-
-import bentoImg from '../assets/seoImage.jpg'; 
+import { Layout, Palette, MousePointer2, Smartphone, CheckCircle2, ArrowRight } from 'lucide-react';
+// Import image
+import bentoImg from '../assets/ServicePagesPic/Website Design.webp'; 
 
 const WebsiteDesignPage = () => {
   const features = [
     {
       title: "UI/UX Design",
       desc: "Creating intuitive interfaces and engaging user experiences that convert visitors.",
-      icon: <Palette className="w-6 h-6 text-[#8b75f2]" />
+      icon: <Palette className="w-6 h-6 text-[#8259DA]" />
     },
     {
       title: "Responsive Layouts",
       desc: "Websites that look and perform beautifully on desktops, tablets, and smartphones.",
-      icon: <Smartphone className="w-6 h-6 text-[#8b75f2]" />
+      icon: <Smartphone className="w-6 h-6 text-[#8259DA]" />
     },
     {
       title: "Interactive Prototypes",
       desc: "Visualizing the journey with high-fidelity mockups before moving to code.",
-      icon: <MousePointer2 className="w-6 h-6 text-[#8b75f2]" />
+      icon: <MousePointer2 className="w-6 h-6 text-[#8259DA]" />
     },
     {
       title: "Brand Identity",
       desc: "Aligning your digital presence with your brand's unique voice and visual style.",
-      icon: <Layout className="w-6 h-6 text-[#8b75f2]" />
+      icon: <Layout className="w-6 h-6 text-[#8259DA]" />
     }
   ];
 
-  const sliceStyle = {
-      backgroundImage: `url(${bentoImg})`,
-      boxShadow: '0 0 20px rgba(99, 69, 237, 0.1)'
-    };
-  
-    const sliceClass = "rounded-2xl bg-fixed bg-cover bg-center border border-white/10 hover:border-[#8b75f2]/40 transition-colors duration-500";
-
   return (
-    <section className='bg-black text-white min-h-screen relative overflow-hidden pt-32 pb-16'>
+    <section className='bg-black text-white min-h-screen pt-32 pb-16 overflow-hidden relative'>
       
-      {/* Background Ambient Glows */}
-      <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-[#6345ed]/10 blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-[#6345ed]/5 blur-[120px] pointer-events-none" />
+      {/* Background Ambient Glows - Matching Reference */}
+      <div className="absolute top-[-10%] right-[-10%] w-[600px] h-[600px] bg-[#8259DA]/15 blur-[150px] rounded-full pointer-events-none" />
+      <div className="absolute bottom-[-5%] left-[-5%] w-[400px] h-[400px] bg-blue-600/10 blur-[120px] rounded-full pointer-events-none" />
 
-      <div className='max-w-7xl mx-auto px-6 font-sans relative z-10'>
+      <div className='max-w-7xl mx-auto px-6 relative z-10'>
         {/* Hero Section */}
-        <div className='grid lg:grid-cols-2 gap-12 items-center mb-20'>
-          <div className='flex flex-col gap-6'>
-            <span className='text-[#8b75f2] font-semibold tracking-wide uppercase text-sm'>Elevate Your Brand</span>
-            <h1 className='text-5xl font-extrabold leading-tight bg-gradient-to-r from-white via-purple-400 to-purple-600 bg-clip-text text-transparent'>
-              Modern <span>Web Design</span> for Digital Leaders
-            </h1>
-            <p className='text-lg text-gray-400 leading-relaxed'>
-              We craft high-performance websites that blend stunning aesthetics with seamless functionality. 
-              Transform your digital presence into a powerful business tool with our custom design solutions.
+        <div className='grid lg:grid-cols-2 gap-16 items-center mb-32'>
+          
+          {/* LEFT CONTENT */}
+          <div className='space-y-8'>
+            <div>
+              <h2 className='text-[#8259DA] font-bold uppercase tracking-[0.3em] text-xs mb-4 flex items-center gap-3'>
+                <span className='w-8 h-[2px] bg-[#8259DA]'></span>
+                Elevate Your Brand
+              </h2>
+              <h1 className='text-5xl lg:text-7xl font-black leading-[1.05] tracking-tighter'>
+                MODERN <br />
+                <span className='bg-gradient-to-r from-[#8259DA] to-purple-400 bg-clip-text text-transparent uppercase'>Web Design</span>
+              </h1>
+            </div>
+            
+            <p className='text-gray-400 text-lg leading-relaxed max-w-lg'>
+              We craft high-performance websites that blend stunning aesthetics with seamless functionality. Transform your digital presence into a powerful business tool.
             </p>
-            <div className='flex gap-4 mt-2'>
-              <button className='bg-[#8b75f2] text-white px-8 py-3 rounded-lg font-medium hover:bg-[#604eac] transition shadow-[0_0_20px_rgba(99,69,237,0.4)]'>
-                Start Project
-              </button>
-              <button className='border border-[#6345ed]/40 px-8 py-3 rounded-lg font-medium hover:bg-[#6345ed]/10 transition'>
-                Our Portfolio
+
+            <div className='flex flex-wrap gap-5'>
+              <button className='px-10 py-4 bg-[#8259DA] text-white font-bold rounded-full hover:shadow-[0_0_30px_rgba(130,89,218,0.5)] transition-all active:scale-95 flex items-center gap-2 group'>
+                Start Project <ArrowRight className='group-hover:translate-x-1 transition-transform' />
               </button>
             </div>
           </div>
 
-          <div className='grid grid-cols-4 grid-rows-3 gap-3 h-[450px] w-full'>
-            {/* Big Square Slice */}
+          {/* RIGHT SIDE - Masked Image Showcase */}
+          <div className='relative flex justify-center items-center'>
+            {/* Rotating Decorative Border */}
+            <div className='absolute w-[115%] h-[115%] border border-[#8259DA]/10 rounded-full animate-spin-slow pointer-events-none' />
+            
+            {/* The Masked Container (Asymmetric Shape) */}
             <div 
-              className={`col-span-2 row-span-2 ${sliceClass}`}
-              style={sliceStyle}
-            />
-            {/* Top Right Slice */}
-            <div 
-              className={`col-span-2 row-span-1 ${sliceClass}`}
-              style={sliceStyle}
-            />
-            {/* Mid Slices */}
-            <div 
-              className={`col-span-1 row-span-1 ${sliceClass}`}
-              style={sliceStyle}
-            />
-            <div 
-              className={`col-span-1 row-span-1 ${sliceClass}`}
-              style={sliceStyle}
-            />
-            {/* Bottom Slices */}
-            <div 
-              className={`col-span-3 row-span-1 ${sliceClass}`}
-              style={sliceStyle}
-            />
-            <div 
-              className={`col-span-1 row-span-1 ${sliceClass}`}
-              style={sliceStyle}
-            />
+              className='relative w-full aspect-square max-w-[500px] bg-[#111] border border-white/10 p-2 shadow-2xl overflow-hidden'
+              style={{
+                borderRadius: '40px 180px 40px 40px', // Asymmetric look
+              }}
+            >
+              <div 
+                className='w-full h-full overflow-hidden'
+                style={{ borderRadius: 'inherit' }}
+              >
+                <img 
+                  src={bentoImg} 
+                  alt="Web Design Showcase" 
+                  className='w-full h-full object-cover opacity-70 hover:opacity-100 hover:scale-105 transition-all duration-700'
+                />
+              </div>
+              
+              {/* Overlay Glass Label */}
+              {/* <div className='absolute inset-0 flex flex-col justify-end p-10 bg-gradient-to-t from-black/80 via-transparent to-transparent'>
+                  <p className='text-2xl font-black mb-1'>Website Design Land</p>
+                  <p className='text-gray-400 text-sm'>Crafting Digital Visions</p>
+                  <div className='mt-4 flex gap-2'>
+                      <div className='h-1 w-12 bg-[#8259DA] rounded-full' />
+                      <div className='h-1 w-4 bg-white/20 rounded-full' />
+                  </div>
+              </div> */}
+            </div>
+
+            {/* Floating Accuracy/UX Badge */}
+            <div className='absolute -bottom-6 -left-6 w-36 h-36 bg-[#111]/80 backdrop-blur-xl border border-white/10 rounded-3xl flex items-center justify-center p-4 shadow-2xl hidden md:flex'>
+                <div className='text-center'>
+                    <p className='text-3xl font-black text-[#8259DA]'>100%</p>
+                    <p className='text-[10px] uppercase font-bold text-gray-400 mt-1 tracking-widest'>Responsive</p>
+                </div>
+            </div>
           </div>
-
-
         </div>
 
-        <hr className='border-white/5 mb-20' />
-
-        {/* Features Grid */}
-        <div className='grid md:grid-cols-2 lg:grid-cols-4 gap-8'>
+        {/* FEATURES GRID - Reference Style */}
+        <div className='grid md:grid-cols-2 lg:grid-cols-4 gap-6 pt-16 border-t border-white/5'>
           {features.map((f, i) => (
-            <div 
-              key={i} 
-              className='p-8 rounded-2xl border border-white/5 hover:border-[#6345ed]/50 transition-all duration-300 bg-white/5 backdrop-blur-sm group hover:scale-105'
-              style={{ boxShadow: '0 10px 30px rgba(0,0,0,0.5)' }}
-            >
-              <div className='mb-4 p-3 bg-black/40 rounded-lg w-fit group-hover:shadow-[0_0_15px_rgba(99,69,237,0.4)] transition-all'>
+            <div key={i} className='p-8 rounded-[2rem] bg-[#0c0c0c] border border-white/5 hover:border-[#8259DA]/30 hover:bg-[#111] transition-all group'>
+              <div className='mb-6 p-4 bg-[#8259DA]/10 rounded-2xl w-fit  group-hover:text-white transition-all'>
                 {f.icon}
               </div>
-              <h3 className='text-xl font-bold mb-3 text-white'>{f.title}</h3>
-              <p className='text-gray-400 text-sm leading-relaxed'>{f.desc}</p>
+              <h3 className='text-xl font-bold mb-3 group-hover:text-[#8259DA] transition-colors'>{f.title}</h3>
+              <p className='text-gray-500 text-sm leading-relaxed'>{f.desc}</p>
             </div>
           ))}
         </div>
 
-        {/* Value Proposition */}
-        <div 
-          className='mt-24 rounded-3xl p-12 text-center border border-[#6345ed]/20 bg-gradient-to-b from-[#120d26] to-black'
-          style={{ boxShadow: '0 0 50px rgba(99, 69, 237, 0.1)' }}
-        >
-          <h2 className='text-3xl font-bold mb-8'>The Design Process</h2>
+        {/* Value Proposition Bar */}
+        <div className='mt-24 rounded-[3rem] p-8 text-center border border-white/5 bg-[#080808]'>
           <div className='flex flex-wrap justify-center gap-8'>
             {['Custom Visuals', 'User-Centric Flow', 'SEO Ready', 'Fast Turnaround'].map((item) => (
-              <div key={item} className='flex items-center gap-2 bg-black/40 px-4 py-2 rounded-full border border-white/5'>
-                <CheckCircle2 className='text-[#8b75f2] w-5 h-5' />
-                <span className='font-medium text-gray-200 text-sm'>{item}</span>
+              <div key={item} className='flex items-center gap-2 bg-white/5 px-6 py-2 rounded-full border border-white/5 hover:bg-[#8259DA]/10 transition-colors'>
+                <CheckCircle2 className='text-[#8259DA] w-4 h-4' />
+                <span className='font-bold text-gray-300 text-xs uppercase tracking-wider'>{item}</span>
               </div>
             ))}
           </div>

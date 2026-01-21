@@ -80,9 +80,6 @@ const Team = () => {
           </p>
         </div>
 
-        {/* On Mobile: Use a standard flex/grid layout (relative)
-            On Desktop: Use absolute positioning for the GSAP stack effect 
-        */}
         <div className="relative w-full flex flex-col md:flex-row justify-center items-center gap-8 md:gap-0 h-auto md:h-[500px]">
           {team.map((member, index) => (
             <div

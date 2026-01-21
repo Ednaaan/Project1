@@ -1,7 +1,7 @@
 import React from 'react';
-import { Search, BarChart3, Globe, Zap, CheckCircle2 } from 'lucide-react';
-// 1. Apni image import karein
-import bentoImg from '../assets/seoImage.jpg'; 
+import { Search, BarChart3, Globe, Zap, ArrowRight } from 'lucide-react';
+// Apni image path confirm kar lein
+import bentoImg from '../assets/ServicePagesPic/SEO.webp'; 
 
 const SeoPage = () => {
   const features = [
@@ -12,105 +12,102 @@ const SeoPage = () => {
     },
     {
       title: "Technical SEO",
-      desc: "Optimizing site speed, mobile-responsiveness, and site architecture.",
+      desc: "Optimizing site speed and mobile-responsiveness.",
       icon: <Zap className="w-6 h-6 text-[#8b75f2]" />
     },
     {
       title: "Content Strategy",
-      desc: "Creating valuable content that ranks well and engages your audience.",
+      desc: "Creating valuable content that ranks well and engages audience.",
       icon: <Globe className="w-6 h-6 text-[#8b75f2]" />
     },
     {
-      title: "Analytics & Reporting",
-      desc: "Transparent tracking of your rankings, traffic, and conversion growth.",
+      title: "Analytics",
+      desc: "Transparent tracking of your rankings and conversion growth.",
       icon: <BarChart3 className="w-6 h-6 text-[#8b75f2]" />
     }
   ];
 
-  // Common styles for all bento slices to keep code clean
-  const sliceStyle = {
-    backgroundImage: `url(${bentoImg})`,
-    boxShadow: '0 0 20px rgba(99, 69, 237, 0.1)'
-  };
-
-  const sliceClass = "rounded-2xl bg-fixed bg-cover bg-center border border-white/10 hover:border-[#8b75f2]/40 transition-colors duration-500";
-
   return (
-    <section className='bg-black text-white min-h-screen relative overflow-hidden pt-32 pb-16'>
+    <section className='bg-black text-white min-h-screen pt-32 pb-16 overflow-hidden'>
       
-      <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-[#6345ed]/10 blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-[#6345ed]/5 blur-[120px] pointer-events-none" />
+      {/* BACKGROUND AMBIENT GLOW */}
+      <div className="absolute top-[-10%] right-[-10%] w-[600px] h-[600px] bg-[#8259DA]/20 blur-[150px] rounded-full pointer-events-none" />
 
-      <div className='max-w-7xl mx-auto px-6 font-sans relative z-10'>
-        <div className='grid lg:grid-cols-2 gap-16 items-center mb-20'>
+      <div className='max-w-7xl mx-auto px-6 relative z-10'>
+        <div className='grid lg:grid-cols-2 gap-16 items-center mb-32'>
           
-          {/* Left Side: Content */}
-          <div className='flex flex-col gap-6'>
-            <span className='text-[#8b75f2] font-semibold tracking-wide uppercase text-sm'>Boost Your Visibility</span>
-            <h1 className='text-5xl font-extrabold leading-tight bg-gradient-to-r from-white via-purple-400 to-purple-600 bg-clip-text text-transparent'>
-              Professional <span>SEO Services</span> for Modern Businesses
-            </h1>
-            <p className='text-lg text-gray-400 leading-relaxed'>
-              In today's digital landscape, a strong online presence is crucial. We help you dominate search results, 
-              drive organic traffic, and achieve sustainable growth.
+          {/* LEFT CONTENT */}
+          <div className='space-y-8'>
+            <div>
+              <h2 className='text-[#8259DA] font-bold uppercase tracking-[0.3em] text-sm mb-4 flex items-center gap-3'>
+                <span className='w-12 h-[2px] bg-[#8259DA]'></span>
+                Search Excellence
+              </h2>
+              <h1 className='text-5xl lg:text-7xl font-black leading-[1.05] tracking-tighter'>
+                DOMINATE THE <br />
+                <span className='bg-gradient-to-r from-[#8259DA] to-purple-400 bg-clip-text text-transparent'>SEARCH RESULTS</span>
+              </h1>
+            </div>
+            
+            <p className='text-gray-400 text-lg leading-relaxed max-w-lg'>
+              We combine data-driven strategies with creative execution to ensure your brand stays at the top of the digital landscape.
             </p>
-            <div className='flex gap-4 mt-2'>
-              <button className="group relative px-8 py-3 md:px-12 md:py-4 bg-transparent border border-white/20 rounded-full overflow-hidden transition-all active:scale-95">
-                <span className="relative z-10 text-white font-bold text-sm md:text-base transition-colors group-hover:text-black">Get Started</span>
-                <div className="absolute inset-0 bg-white translate-y-[101%] group-hover:translate-y-0 transition-transform duration-300"></div>
-              </button>
-              <button className="group relative px-8 py-3 md:px-12 md:py-4 bg-transparent border border-white/20 rounded-full overflow-hidden transition-all active:scale-95">
-                <span className="relative z-10 text-white font-bold text-sm md:text-base transition-colors group-hover:text-black">View Case Studies</span>
-                <div className="absolute inset-0 bg-white translate-y-[101%] group-hover:translate-y-0 transition-transform duration-300"></div>
+
+            <div className='flex flex-wrap gap-5'>
+              <button className='px-10 py-4 bg-[#8259DA] text-white font-bold rounded-full hover:shadow-[0_0_30px_rgba(130,89,218,0.5)] transition-all active:scale-95 flex items-center gap-2 group'>
+                Get Free Audit <ArrowRight className='group-hover:translate-x-1 transition-transform' />
               </button>
             </div>
           </div>
 
-          {/* Right Side: Sliced Bento Grid */}
-          <div className='grid grid-cols-4 grid-rows-3 gap-3 h-[450px] w-full'>
-            {/* Big Square Slice */}
+          {/* RIGHT MASKED GRAPHIC */}
+          <div className='relative flex justify-center items-center'>
+            {/* The Animated Glow Ring */}
+            <div className='absolute w-[110%] h-[110%] border border-white/5 rounded-full animate-spin-slow pointer-events-none' />
+            
+            {/* The Masked Container */}
             <div 
-              className={`col-span-2 row-span-2 ${sliceClass}`}
-              style={sliceStyle}
-            />
-            {/* Top Right Slice */}
-            <div 
-              className={`col-span-2 row-span-1 ${sliceClass}`}
-              style={sliceStyle}
-            />
-            {/* Mid Slices */}
-            <div 
-              className={`col-span-1 row-span-1 ${sliceClass}`}
-              style={sliceStyle}
-            />
-            <div 
-              className={`col-span-1 row-span-1 ${sliceClass}`}
-              style={sliceStyle}
-            />
-            {/* Bottom Slices */}
-            <div 
-              className={`col-span-3 row-span-1 ${sliceClass}`}
-              style={sliceStyle}
-            />
-            <div 
-              className={`col-span-1 row-span-1 ${sliceClass}`}
-              style={sliceStyle}
-            />
+              className='relative w-full aspect-square max-w-[500px] bg-gradient-to-br from-[#8259DA] to-purple-900 p-[2px]'
+              style={{
+                clipPath: 'polygon(25% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 25%)', // Example Modern Cut
+                // Aap online "clippy" tool se apna manpasand shape yahan daal sakte hain
+              }}
+            >
+              <div 
+                className='w-full h-full bg-black overflow-hidden relative group'
+                style={{ clipPath: 'polygon(25% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 25%)' }}
+              >
+                <img 
+                  src={bentoImg} 
+                  alt="SEO Strategy" 
+                  className='w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700 ease-in-out'
+                />
+                
+                {/* Overlay Glass effect on image */}
+                <div className='absolute inset-0 bg-gradient-to-tr from-black/80 via-transparent to-transparent pointer-events-none' />
+              </div>
+            </div>
+
+            {/* Small Floating Decorative Element */}
+            <div className='absolute -bottom-10 -left-10 w-32 h-32 bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl flex items-center justify-center p-4 hidden md:flex'>
+                <div className='text-center'>
+                    <p className='text-2xl font-black text-[#8259DA]'>99%</p>
+                    <p className='text-[10px] uppercase font-bold text-gray-400'>Accuracy</p>
+                </div>
+            </div>
           </div>
 
         </div>
 
-        <hr className='border-white/5 mb-20' />
-
-        
-        <div className='grid md:grid-cols-2 lg:grid-cols-4 gap-8'>
+        {/* FEATURES SECTION */}
+        <div className='grid md:grid-cols-2 lg:grid-cols-4 gap-6 pt-16 border-t border-white/10'>
           {features.map((f, i) => (
-            <div key={i} className='p-8 rounded-2xl border border-white/5 hover:border-[#6345ed]/50 transition-all duration-300 bg-white/5 backdrop-blur-sm group hover:scale-105'>
-              <div className='mb-4 p-3 bg-black/40 rounded-lg w-fit group-hover:shadow-[0_0_15px_rgba(99,69,237,0.4)] transition-all'>
+            <div key={i} className='p-8 rounded-3xl bg-white/[0.02] border border-white/5 hover:border-[#8259DA]/30 hover:bg-white/[0.04] transition-all group'>
+              <div className='mb-6 p-4 bg-[#8259DA]/10 rounded-2xl w-fit group-hover:bg-[#8259DA]/20 transition-all'>
                 {f.icon}
               </div>
-              <h3 className='text-xl font-bold mb-3 text-white'>{f.title}</h3>
-              <p className='text-gray-400 text-sm leading-relaxed'>{f.desc}</p>
+              <h3 className='text-xl font-bold mb-3'>{f.title}</h3>
+              <p className='text-gray-500 text-sm leading-relaxed'>{f.desc}</p>
             </div>
           ))}
         </div>
