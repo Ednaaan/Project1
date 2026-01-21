@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 
+
 import client1 from "../assets/clientSliders/AndamanLiveHolidays.webp";
 import client2 from "../assets/clientSliders/BME Builders.webp";
 import client3 from "../assets/clientSliders/CG Bathrooms LTD.webp";
@@ -19,40 +20,44 @@ const ClientSlider = () => {
   const row1Ref = useRef(null);
   const row2Ref = useRef(null);
 
-  // Row 1: First 7 logos
   const firstRowLogos = [client1, client2, client3, client4, client5, client6, client7];
-  
-  // Row 2: Last 6 logos
   const secondRowLogos = [client8, client9, client10, client11, client12, client13];
 
   useEffect(() => {
-    // Speed badhane ke liye duration 10-12 seconds rakhi hai
-    gsap.to(row1Ref.current, {
+    // ROW 1: Left to Right
+    // w-max ensure karega ki images choti na hon
+    const r1 = gsap.to(row1Ref.current, {
       xPercent: -50,
-      duration: 12, 
+      duration: 20, // Mobile par smooth dikhne ke liye duration thodi badhayi hai
       ease: "none",
       repeat: -1,
     });
 
-    gsap.fromTo(
+    // ROW 2: Right to Left
+    const r2 = gsap.fromTo(
       row2Ref.current,
       { xPercent: -50 },
       {
         xPercent: 0,
-        duration: 10, // Row 2 thoda aur fast chalegi opposite direction mein
+        duration: 18, 
         ease: "none",
         repeat: -1,
       }
     );
+
+    // Clean up on unmount
+    return () => {
+      r1.kill();
+      r2.kill();
+    };
   }, []);
 
   return (
     <section className="relative py-24 bg-black overflow-hidden w-full">
       
-      {/* HEADING */}
       <div className="text-center mb-16 px-4">
         <h2 className="text-3xl md:text-5xl font-bold text-white">
-          Trusted by <span className="bg-gradient-to-r from-white via-purple-400 to-purple-500 bg-clip-text text-transparent">Industry Leaders</span>
+          Trusted by <span className="bg-[#8259DA] bg-clip-text text-transparent">Industry Leaders</span>
         </h2>
         <p className="mt-4 text-gray-400 max-w-xl mx-auto">
           Businesses across industries rely on us to scale and succeed.
@@ -60,40 +65,44 @@ const ClientSlider = () => {
       </div>
 
       <div className="relative w-full">
-        {/* EDGE FADE */}
-        <div className="absolute inset-y-0 left-0 w-20 sm:w-32 bg-gradient-to-r from-black to-transparent z-10" />
-        <div className="absolute inset-y-0 right-0 w-20 sm:w-32 bg-gradient-to-l from-black to-transparent z-10" />
+        {/* EDGE FADE - Inhe thoda zyada wide kiya hai for better look */}
+        <div className="absolute inset-y-0 left-0 w-24 sm:w-48 bg-gradient-to-r from-black via-black/80 to-transparent z-10" />
+        <div className="absolute inset-y-0 right-0 w-24 sm:w-48 bg-gradient-to-l from-black via-black/80 to-transparent z-10" />
 
-        {/* ROW 1 (First 7) */}
-        <div className="overflow-hidden mb-12">
+        {/* ROW 1 */}
+        <div className="flex overflow-hidden mb-12">
+          {/* w-max and flex-nowrap are keys here */}
           <div
             ref={row1Ref}
-            className="flex items-center gap-12 sm:gap-20 md:gap-24 whitespace-nowrap"
+            className="flex items-center gap-12 sm:gap-24 whitespace-nowrap w-max"
           >
+            {/* Array ko double karna zaroori hai seamless loop ke liye */}
             {[...firstRowLogos, ...firstRowLogos].map((logo, i) => (
-              <img
-                key={i}
-                src={logo}
-                alt="Client logo"
-                className="h-20 sm:h-24 md:h-28 w-auto object-contain border border-white rounded-full transition-all duration-300"
-              />
+              <div key={i} className="shrink-0">
+                <img
+                  src={logo}
+                  alt="Client logo"
+                  className="h-16 sm:h-20 md:h-24 w-auto object-contain border border-white/20 rounded-full transition-all duration-500 "
+                />
+              </div>
             ))}
           </div>
         </div>
 
-        {/* ROW 2 (Last 6) */}
-        <div className="overflow-hidden">
+        {/* ROW 2 */}
+        <div className="flex overflow-hidden">
           <div
             ref={row2Ref}
-            className="flex items-center gap-12 sm:gap-20 md:gap-24 whitespace-nowrap"
+            className="flex items-center gap-12 sm:gap-24 whitespace-nowrap w-max"
           >
             {[...secondRowLogos, ...secondRowLogos].map((logo, i) => (
-              <img
-                key={i}
-                src={logo}
-                alt="Client logo"
-                className="h-20 sm:h-24 md:h-28 w-auto object-contain border border-white rounded-full transition-all duration-300"
-              />
+              <div key={i} className="shrink-0">
+                <img
+                  src={logo}
+                  alt="Client logo"
+                  className="h-16 sm:h-20 md:h-24 w-auto object-contain border border-white/20 rounded-full transition-all duration-500 "
+                />
+              </div>
             ))}
           </div>
         </div>
