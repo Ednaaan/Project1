@@ -136,27 +136,32 @@ const Hero = () => {
       </div>
 
       <div className="w-full bg-purple-600/10 border-b border-t border-white/5 py-4 overflow-hidden mt-8 md:mt-12">
-        {/* Dynamic speed applied here */}
-        <div 
-          className="animate-marquee flex gap-12 items-center" 
-          style={{ animationDuration: marqueeSpeed }}
-        >
-          <div className="flex gap-12 items-center px-4 shrink-0">
-            <span className="text-xl md:text-3xl font-bold uppercase tracking-[0.2em] bg-gradient-to-r from-white via-white to-purple-500 bg-clip-text text-transparent">10+ years of Experience</span>
-            <span className="text-white/20">|</span>
-            <span className="text-xl md:text-3xl font-bold uppercase tracking-[0.2em] bg-gradient-to-r from-white via-white to-purple-500 bg-clip-text text-transparent">95% Client Retention Rate</span>
-            <span className="text-white/20">|</span>
-            <span className="text-xl md:text-3xl font-bold uppercase tracking-[0.2em] bg-gradient-to-r from-white via-white to-purple-500 bg-clip-text text-transparent">4.9/5★ Rated on Google</span>
-          </div>
-          <div className="flex gap-12 items-center px-4 shrink-0">
-            <span className="text-xl md:text-3xl font-bold uppercase tracking-[0.2em] bg-gradient-to-r from-white via-white to-purple-500 bg-clip-text text-transparent">10+ years of Experience</span>
-            <span className="text-white/20">|</span>
-            <span className="text-xl md:text-3xl font-bold uppercase tracking-[0.2em] bg-gradient-to-r from-white via-white to-purple-500 bg-clip-text text-transparent">95% Client Retention Rate</span>
-            <span className="text-white/20">|</span>
-            <span className="text-xl md:text-3xl font-bold uppercase tracking-[0.2em] bg-gradient-to-r from-white via-white to-purple-500 bg-clip-text text-transparent">4.9/5★ Rated on Google</span>
-          </div>
-        </div>
+  <div 
+    className="flex w-max animate-marquee whitespace-nowrap" 
+    style={{ 
+      '--duration': marqueeSpeed,
+      display: 'flex',
+      flexDirection: 'row'
+    }}
+  >
+    {/* Ek hi content block ko variable mein rakh kar 3 baar render karein */}
+    {[1, 2, 3].map((_, index) => (
+      <div key={index} className="flex gap-12 items-center px-6 shrink-0">
+        <span className="text-xl md:text-3xl font-bold uppercase tracking-[0.2em] bg-gradient-to-r from-white via-white to-purple-500 bg-clip-text text-transparent">
+          10+ years of Experience
+        </span>
+        <span className="text-white/20 text-3xl">|</span>
+        <span className="text-xl md:text-3xl font-bold uppercase tracking-[0.2em] bg-gradient-to-r from-white via-white to-purple-500 bg-clip-text text-transparent">
+          95% Client Retention Rate
+        </span>
+        <span className="text-white/20 text-3xl">|</span>
+        <span className="text-xl md:text-3xl font-bold uppercase tracking-[0.2em] bg-gradient-to-r from-white via-white to-purple-500 bg-clip-text text-transparent">
+          4.9/5★ Rated on Google
+        </span>
       </div>
+    ))}
+  </div>
+</div>
     </section>
   );
 };

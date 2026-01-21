@@ -11,7 +11,7 @@ const Navbar = () => {
   const logoRef = useRef(null);
   const linksRef = useRef(null);
   const mobileMenuRef = useRef(null);
-  const hamburgerRef = useRef(null); // Added ref for the toggle button
+  const hamburgerRef = useRef(null); 
 
   const [menuOpen, setMenuOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -35,8 +35,7 @@ const Navbar = () => {
         ease: "expo.out",
         clearProps: "opacity,transform",
       });
-
-      // 2. Scroll glass effect
+      // 2. Scroll-triggered background and link color change
       gsap.timeline({
         scrollTrigger: {
           trigger: "body",
@@ -124,7 +123,7 @@ const Navbar = () => {
           <li><Link to="/contact" className="hover:opacity-70 transition-opacity">CONTACT</Link></li>
         </ul>
 
-        {/* HAMBURGER BUTTON */}
+       
         <button 
           ref={hamburgerRef}
           className="md:hidden text-2xl z-50 transition-colors duration-300" 

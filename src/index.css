@@ -10,14 +10,20 @@ html, body {
 
 
 @keyframes marquee {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    /* Agar 2 sets hain toh -50%, agar 3 sets hain toh -33.33% */
+    transform: translateX(-33.333%); 
+  }
 }
-
 .animate-marquee {
   display: flex;
+  width: max-content;
   white-space: nowrap;
-  animation: marquee 20s linear infinite;
+  animation: marquee var(--duration, 20s) linear infinite;
+  will-change: transform; /* Performance fix for mobile */
 }
 
 /* Optional: Hover karne par ruk jayega */

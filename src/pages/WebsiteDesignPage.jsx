@@ -1,6 +1,6 @@
 import React from 'react';
 import { Layout, Palette, MousePointer2, Smartphone, CheckCircle2, ArrowRight } from 'lucide-react';
-// Import image
+
 import bentoImg from '../assets/ServicePagesPic/Website Design.webp'; 
 
 const WebsiteDesignPage = () => {
@@ -85,15 +85,7 @@ const WebsiteDesignPage = () => {
                 />
               </div>
               
-              {/* Overlay Glass Label */}
-              {/* <div className='absolute inset-0 flex flex-col justify-end p-10 bg-gradient-to-t from-black/80 via-transparent to-transparent'>
-                  <p className='text-2xl font-black mb-1'>Website Design Land</p>
-                  <p className='text-gray-400 text-sm'>Crafting Digital Visions</p>
-                  <div className='mt-4 flex gap-2'>
-                      <div className='h-1 w-12 bg-[#8259DA] rounded-full' />
-                      <div className='h-1 w-4 bg-white/20 rounded-full' />
-                  </div>
-              </div> */}
+             
             </div>
 
             {/* Floating Accuracy/UX Badge */}
